@@ -98,6 +98,96 @@ textarea:focus-visible {
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
 }
 
+/* The FOSS section has its own green palette; client-work styling stays orange. */
+.foss-section {
+  --foss-accent: #a3e6b1;
+  --foss-muted: #b6cbbc;
+  color: #edf5ee;
+  background: radial-gradient(ellipse at 85% 20%, #1a3829 0%, #101c16 55%, #101713 100%);
+}
+
+.foss-accent {
+  color: var(--foss-accent);
+}
+
+.foss-muted {
+  color: var(--foss-muted);
+}
+
+.foss-role,
+.foss-badge {
+  color: var(--foss-accent);
+  background: #a3e6b10d;
+  border: 1px solid #a3e6b133;
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+
+.foss-badge {
+  font-size: 10px;
+  padding: 6px 10px;
+}
+
+.foss-card {
+  min-width: 0;
+  background: #132019;
+  border: 1px solid #a3e6b133;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px #00000033;
+}
+
+.foss-preview {
+  color: var(--foss-accent);
+  background: radial-gradient(ellipse at center, #284834 0%, #15291e 70%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 20px;
+  border-bottom: 1px solid #a3e6b11f;
+}
+
+.foss-preview-label {
+  color: var(--foss-muted);
+  font-size: 10px;
+}
+
+.foss-eye {
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease;
+}
+
+.foss-card:hover .foss-eye {
+  transform: scale(1.04);
+}
+
+.foss-download {
+  color: #102217;
+  background: var(--foss-accent);
+  padding: 14px 18px;
+  border-radius: 6px;
+}
+
+.foss-download:hover {
+  background: #c3f2cd;
+}
+
+.foss-source {
+  color: var(--foss-accent);
+  padding: 10px 0;
+}
+
+.foss-source:hover {
+  color: #edf5ee;
+}
+
+.foss-section a:focus-visible {
+  outline-color: var(--foss-accent);
+}
+
 /* Honest disabled state for not-yet-launched project links */
 .coming-soon {
   opacity: 0.65;
@@ -117,6 +207,10 @@ textarea:focus-visible {
 
   .hover-lift:hover,
   .hover-lift:focus-within {
+    transform: none;
+  }
+
+  .foss-card:hover .foss-eye {
     transform: none;
   }
 }
