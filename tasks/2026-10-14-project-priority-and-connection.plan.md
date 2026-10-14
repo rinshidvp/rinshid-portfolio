@@ -1,6 +1,6 @@
 # Portfolio: project priority, writing link, and freelance connection
 
-Status: approved and implemented; local verification and independent review passed. Production verification follows deployment.
+Status: complete. Implemented, reviewed, deployed and verified on the production portfolio.
 
 ## Requirements
 1. Add a visible hero button to writing at https://rinshid-note.vercel.app/writing/.
@@ -58,3 +58,4 @@ Status: approved and implemented; local verification and independent review pass
 - Found and fixed pre-existing 1024px overflow: decorative hero glow extended to x=1040. Keeping the glow within the photo area resolves it without hiding page content.
 - Independent code review: SHIP; reviewer independently confirmed the order, preserved content, legacy anchor and responsive layouts.
 - HTML structure, ID uniqueness, internal anchors and local assets checked. Predictor, OS and writing destinations return HTTP 200.
+- Production implementation commit: `7d39284`. Vercel deployment Ready at https://rinshid-portfolio.vercel.app/; the same browser feature verification passed against the production URL.
