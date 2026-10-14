@@ -272,7 +272,7 @@
           class="hidden lg:inline-flex items-center justify-center bg-primary-container text-surface-container-lowest font-label-caps text-label-caps px-6 py-3 rounded hover:scale-95 transition-transform duration-300"
           href="#contact"
         >
-          Hire Me
+          Connect With Me
         </a>
         <button
           type="button"
@@ -337,7 +337,7 @@
             <a
               class="flex items-center justify-center bg-primary-container text-surface-container-lowest font-label-caps text-label-caps px-6 py-4 rounded"
               href="#contact"
-              >Hire Me</a
+              >Connect With Me</a
             >
           </li>
         </ul>
@@ -385,23 +385,29 @@
             >
               I build software that makes everyday work easier.
             </h1>
-            <div class="order-3 lg:order-none flex flex-col sm:flex-row gap-3 mt-2">
+            <div class="order-3 lg:order-none flex flex-col sm:flex-row sm:flex-wrap gap-3 mt-2">
               <a
                 href="#projects"
                 class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-primary-container text-surface-container-lowest font-label-caps text-label-caps px-8 py-4 rounded hover:scale-[0.97] transition-transform duration-300 min-h-[48px]"
               >
-                View Work
+                View Projects
                 <span class="material-symbols-outlined text-base"
                   >arrow_outward</span
                 >
               </a>
               <a
-                href="Rinshid_CV.html"
+                href="https://rinshid-note.vercel.app/writing/"
                 target="_blank"
                 rel="noopener"
                 class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-transparent border border-white/20 text-on-surface font-label-caps text-label-caps px-8 py-4 rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors duration-300 min-h-[48px]"
               >
-                Download Resume
+                Read My Writing
+              </a>
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-transparent border border-white/20 text-on-surface font-label-caps text-label-caps px-8 py-4 rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors duration-300 min-h-[48px]"
+              >
+                Connect With Me
               </a>
             </div>
             <p class="order-4 lg:order-none font-body-lg text-body-lg text-on-surface-variant max-w-xl">
@@ -415,7 +421,7 @@
                 class="w-2 h-2 rounded-full bg-primary-container animate-pulse flex-shrink-0"
               ></span>
               <span class="font-label-caps text-label-caps text-on-surface-variant"
-                >Open to freelance &amp; consulting work</span
+                >Available for freelance projects</span
               >
             </div>
             <p
@@ -448,7 +454,7 @@
           <div class="hidden lg:block lg:w-1/2 relative">
             <div
               aria-hidden="true"
-              class="absolute -top-10 -right-10 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"
+              class="absolute -top-10 right-0 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"
             ></div>
             <div class="relative rounded-lg overflow-hidden border border-white/10">
               <img
@@ -592,7 +598,7 @@
           </div>
         </div>
         <!-- Journey timeline -->
-        <div>
+        <div id="journey">
           <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-8">
             The journey so far
           </h3>
@@ -727,8 +733,17 @@
               </div>
               <span
                 class="font-label-caps text-label-caps text-on-surface-variant opacity-60 flex-shrink-0"
-                >June 2026 – Aug 2026</span
+                    >June 2026 – Aug 2026</span
               >
+            </div>
+            <div class="flex items-center gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4">
+              <span class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0">
+                <span class="material-symbols-outlined text-primary-container text-xl" aria-hidden="true">groups</span>
+              </span>
+              <div>
+                <h4 class="font-headline-md text-base md:text-lg text-on-surface">FOSS — Vice Chair</h4>
+                <p class="text-sm text-on-surface-variant">Free and open-source community leadership</p>
+              </div>
             </div>
           </div>
         </div>
@@ -742,15 +757,167 @@
           PROJECTS
         </p>
         <h2 class="font-headline-xl text-headline-xl text-on-surface mb-4">
-          Featured case studies
+          Selected Projects
         </h2>
         <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
-          AI automation, full-stack products, and tools for everyday life.
-          Four case studies below explore the problem, the build, and the
-          result — followed by more projects and my open notebook.
+          Desktop tools, student platforms, and AI-powered workflows.
+          A selection of what I build — starting with BlinkBreak, my
+          free and open-source desktop companion.
         </p>
+        <!-- First project: BlinkBreak. The old #foss link still reaches this card. -->
+        <article id="foss" class="foss-card grid grid-cols-1 md:grid-cols-2 mb-8 scroll-mt-[84px] md:scroll-mt-[100px]" aria-labelledby="blinkbreak-title">
+          <div class="foss-preview" aria-hidden="true">
+            <span class="foss-preview-label font-label-caps text-label-caps">A SMALL REMINDER TO</span>
+            <svg class="foss-eye" viewBox="0 0 180 180" fill="none">
+              <circle cx="90" cy="90" r="76" stroke="currentColor" stroke-opacity="0.16" stroke-width="2" />
+              <circle cx="90" cy="90" r="76" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="355 123" transform="rotate(-90 90 90)" />
+              <path d="M44 90C56 70 72 60 90 60s34 10 46 30c-12 20-28 30-46 30S56 110 44 90Z" stroke="currentColor" stroke-width="3" />
+              <circle cx="90" cy="90" r="14" stroke="currentColor" stroke-width="3" />
+            </svg>
+            <span class="font-headline-md text-2xl">Blink. Breathe. Reset.</span>
+          </div>
+          <div class="p-6 md:p-8 flex flex-col justify-center">
+            <p class="foss-accent font-label-caps text-label-caps mb-3">MY FOSS PROJECT · DESKTOP</p>
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+              <h3 id="blinkbreak-title" class="font-headline-md text-2xl md:text-headline-md">BlinkBreak</h3>
+              <span class="foss-badge font-label-caps text-label-caps">OPEN SOURCE · MIT</span>
+            </div>
+            <p class="foss-muted text-sm mb-4">
+              Calm reminders to blink, look away, and move. Runs quietly
+              on your desktop, with no accounts or tracking and light
+              and dark themes. Available for Windows, macOS, and Linux.
+            </p>
+            <p class="foss-muted text-xs mb-6">Tauri 2 · React · TypeScript · Rust</p>
+            <div class="flex flex-wrap items-center gap-4">
+              <a
+                href="https://github.com/rinshidvp/blinkbreak/releases/latest"
+                target="_blank"
+                rel="noopener"
+                class="foss-download font-label-caps text-label-caps inline-flex items-center gap-2"
+                >GET BLINKBREAK
+                <span class="material-symbols-outlined text-sm" aria-hidden="true">download</span></a
+              >
+              <a
+                href="https://github.com/rinshidvp/blinkbreak"
+                target="_blank"
+                rel="noopener"
+                class="foss-source font-label-caps text-label-caps inline-flex items-center gap-2"
+                >VIEW SOURCE
+                <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span></a
+              >
+            </div>
+          </div>
+        </article>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <!-- Featured Project 1: CampusTrade -->
+          <!-- Priority project 2: CosmIQ Sync -->
+          <article class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5" aria-labelledby="sync-title">
+            <div class="aspect-video overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                alt="CosmIQ Sync project preview graphic"
+                src="images/project-4.svg"
+                width="800"
+                height="450"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
+              <h3 id="sync-title" class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight">CosmIQ Sync</h3>
+              <span class="font-label-caps text-label-caps text-primary-container">DEV TOOLS</span>
+              <p class="text-xs text-on-surface-variant opacity-80">React · TypeScript · Supabase · Vercel</p>
+              <p class="text-sm text-on-surface-variant mt-1">
+                Move code snippets and screenshots between a shared lab
+                computer and your own device using a 5-digit session key.
+                No account needed, with real-time sync and scheduled expiry.
+              </p>
+              <div class="flex flex-wrap gap-4 mt-auto pt-4">
+                <a href="https://cosmiq-sync.vercel.app/" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
+                  LIVE <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                </a>
+                <a href="https://github.com/rinshidvp/cosmiq-sync" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
+                  GITHUB <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- Priority project 3: CosmIQ KEAM Predictor -->
+          <article class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5" aria-labelledby="keam-title">
+            <div class="aspect-video bg-primary-container/10 flex flex-col items-center justify-center gap-3" aria-hidden="true">
+              <span class="material-symbols-outlined text-6xl text-primary-container">school</span>
+              <span class="font-label-caps text-label-caps text-on-surface-variant">YOUR RANK. YOUR OPTIONS.</span>
+            </div>
+            <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
+              <h3 id="keam-title" class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight">CosmIQ KEAM Predictor</h3>
+              <span class="font-label-caps text-label-caps text-primary-container">EDTECH · DATA</span>
+              <p class="text-xs text-on-surface-variant opacity-80">Next.js · TypeScript · Supabase · Tailwind CSS</p>
+              <p class="text-sm text-on-surface-variant mt-1">
+                Explore Kerala engineering colleges using your KEAM rank
+                and category, with filters for college, branch, and allotment
+                phase. Based on historical cutoffs, not a guarantee of admission.
+              </p>
+              <div class="flex flex-wrap gap-4 mt-auto pt-4">
+                <a href="https://cosmiq-keam-predictor.vercel.app/" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
+                  LIVE <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                </a>
+                <a href="https://github.com/rinshidvp/cosmiq-keam-predictor" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
+                  GITHUB <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- Priority project 4: CosmIQ OS. Its source repository is private. -->
+          <article class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5" aria-labelledby="os-title">
+            <div class="aspect-video bg-primary-container/10 flex flex-col items-center justify-center gap-3" aria-hidden="true">
+              <span class="material-symbols-outlined text-6xl text-primary-container">account_tree</span>
+              <span class="font-label-caps text-label-caps text-on-surface-variant">ENQUIRY TO QUOTATION.</span>
+            </div>
+            <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
+              <h3 id="os-title" class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight">CosmIQ OS</h3>
+              <span class="font-label-caps text-label-caps text-primary-container">AI WORKFLOWS · PROTOTYPE</span>
+              <p class="text-xs text-on-surface-variant opacity-80">Next.js · TypeScript · PostgreSQL</p>
+              <p class="text-sm text-on-surface-variant mt-1">
+                A website and enquiry-to-quotation prototype for testing labs,
+                with structured service requests and staff approval. The pilot
+                uses sample records and a simulated WhatsApp interface, not
+                a live WhatsApp or LIMS integration.
+              </p>
+              <div class="flex flex-wrap gap-4 mt-auto pt-4">
+                <a href="https://cosmiq-os.vercel.app/" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
+                  WEBSITE <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- Priority project 5: AURA -->
+          <article class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5" aria-labelledby="aura-title">
+            <div class="aspect-video bg-primary-container/10 flex flex-col items-center justify-center gap-3" aria-hidden="true">
+              <span class="material-symbols-outlined text-6xl text-primary-container">account_balance</span>
+              <span class="font-label-caps text-label-caps text-on-surface-variant">REPORT. TRACK. RESOLVE.</span>
+            </div>
+            <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
+              <h3 id="aura-title" class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight">AURA</h3>
+              <span class="font-label-caps text-label-caps text-primary-container">CAMPUS · TEAM PROJECT</span>
+              <p class="text-xs text-on-surface-variant opacity-80">Java 17 · Supabase · PostgreSQL · Vercel</p>
+              <p class="text-sm text-on-surface-variant mt-1">
+                A campus issue reporting and resolution system for TKMCE,
+                with anonymous submissions, upvotes, and transparent status
+                tracking. Academic team project I lead, with a Java desktop
+                app and a live web portal.
+              </p>
+              <div class="flex flex-wrap gap-4 mt-auto pt-4">
+                <a href="https://aura-campus-three.vercel.app/" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
+                  LIVE PORTAL <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                </a>
+                <a href="https://github.com/rinshidvp/AURA" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
+                  GITHUB <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-6 mt-16">More projects</h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          <!-- More project 1: CampusTrade -->
           <div
             class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5"
           >
@@ -770,11 +937,11 @@
                   class="font-label-caps text-label-caps text-primary-container"
                   >MARKETPLACE</span
                 >
-                <h3
+                <h4
                   class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight mt-1"
                 >
                   CampusTrade
-                </h3>
+                </h4>
               </div>
               <p class="text-xs text-on-surface-variant opacity-80">
                 Next.js · React · Tailwind CSS · Supabase · PostgreSQL ·
@@ -829,7 +996,38 @@
               </div>
             </div>
           </div>
-          <!-- Featured Project 2: Pragathi KEAM Portal -->
+          <!-- More project 2: RentVibe -->
+          <article class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5" aria-labelledby="rentvibe-title">
+            <div class="aspect-video overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                alt="RentVibe project preview graphic"
+                src="images/project-6.svg"
+                width="800"
+                height="450"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
+              <h4 id="rentvibe-title" class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight">RentVibe</h4>
+              <span class="font-label-caps text-label-caps text-primary-container">MARKETPLACE</span>
+              <p class="text-xs text-on-surface-variant opacity-80">React · Supabase · Vercel</p>
+              <p class="text-sm text-on-surface-variant mt-1">
+                Rental &amp; sales platform connecting local businesses with
+                consumers, with an admin-curated inventory quality-control
+                workflow.
+              </p>
+              <div class="flex flex-wrap gap-4 mt-auto pt-4">
+                <a href="https://rentvibe.vercel.app/" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
+                  LIVE <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                </a>
+                <a href="https://github.com/rinshidvp/rentvibe-landing" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
+                  GITHUB <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- More project 3: Pragathi KEAM Portal -->
           <div
             class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5"
           >
@@ -849,11 +1047,11 @@
                   class="font-label-caps text-label-caps text-primary-container"
                   >EDTECH · DATA</span
                 >
-                <h3
+                <h4
                   class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight mt-1"
                 >
                   Pragathi KEAM Portal
-                </h3>
+                </h4>
               </div>
               <p class="text-xs text-on-surface-variant opacity-80">
                 React · Supabase · PostgreSQL · PapaParse
@@ -902,7 +1100,7 @@
               </div>
             </div>
           </div>
-          <!-- Featured Project 3: AI SDR & Meeting Intelligence -->
+          <!-- More project 4: AI SDR & Meeting Intelligence -->
           <div
             class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5"
           >
@@ -922,11 +1120,11 @@
                   class="font-label-caps text-label-caps text-primary-container"
                   >AI AUTOMATION</span
                 >
-                <h3
+                <h4
                   class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight mt-1"
                 >
                   AI SDR &amp; Meeting Intelligence
-                </h3>
+                </h4>
               </div>
               <p class="text-xs text-on-surface-variant opacity-80">
                 n8n · Docker · Gemini 1.5 Pro
@@ -970,7 +1168,7 @@
               </div>
             </div>
           </div>
-          <!-- Featured Project 4: AI Content Factory -->
+          <!-- More project 5: AI Content Factory -->
           <div
             class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5"
           >
@@ -990,11 +1188,11 @@
                   class="font-label-caps text-label-caps text-primary-container"
                   >AI AUTOMATION</span
                 >
-                <h3
+                <h4
                   class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight mt-1"
                 >
                   AI Content Factory
-                </h3>
+                </h4>
               </div>
               <p class="text-xs text-on-surface-variant opacity-80">
                 React · LangGraph · FastAPI · Groq · Gemini
@@ -1030,107 +1228,7 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- More Projects -->
-        <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-6 mt-16">
-          More projects
-        </h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- More Project 1: CosmIQ Sync -->
-          <div
-            class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5"
-          >
-            <div class="aspect-video overflow-hidden">
-              <img
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                alt="CosmIQ Sync project preview graphic"
-                src="images/project-4.svg"
-                width="800"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
-              <h4
-                class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight"
-              >
-                CosmIQ Sync
-              </h4>
-              <span
-                class="font-label-caps text-label-caps text-primary-container"
-                >DEV TOOLS</span
-              >
-              <p class="text-xs text-on-surface-variant opacity-80">
-                React · TypeScript · Supabase · Vercel
-              </p>
-              <p class="text-sm text-on-surface-variant mt-1">
-                Move code snippets and screenshots between a shared lab
-                computer and your own device using a 5-digit session key.
-                No account needed, with real-time sync and scheduled expiry.
-              </p>
-              <div class="flex gap-4 mt-auto pt-4">
-                <a
-                  href="https://cosmiq-sync.vercel.app/"
-                  target="_blank"
-                  rel="noopener"
-                  class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
-                  >LIVE
-                  <span class="material-symbols-outlined text-sm"
-                    >arrow_outward</span
-                  ></a
-                >
-                <a
-                  href="https://github.com/rinshidvp/cosmiq-sync"
-                  target="_blank"
-                  rel="noopener"
-                  class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
-                  >GITHUB
-                  <span class="material-symbols-outlined text-sm"
-                    >arrow_outward</span
-                  ></a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- More Project 2: AURA -->
-          <div
-            class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5"
-          >
-            <div class="aspect-video bg-primary-container/10 flex flex-col items-center justify-center gap-3" aria-hidden="true">
-              <span class="material-symbols-outlined text-6xl text-primary-container">account_balance</span>
-              <span class="font-label-caps text-label-caps text-on-surface-variant">REPORT. TRACK. RESOLVE.</span>
-            </div>
-            <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
-              <h4 class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight">AURA</h4>
-              <span class="font-label-caps text-label-caps text-primary-container">CAMPUS · TEAM PROJECT</span>
-              <p class="text-xs text-on-surface-variant opacity-80">Java 17 · Supabase · PostgreSQL · Vercel</p>
-              <p class="text-sm text-on-surface-variant mt-1">
-                A campus issue reporting and resolution system for TKMCE,
-                with anonymous submissions, upvotes, and transparent status
-                tracking. Academic team project I lead, with a Java desktop
-                app and a live web portal.
-              </p>
-              <div class="flex flex-wrap gap-4 mt-auto pt-4">
-                <a
-                  href="https://aura-campus-three.vercel.app/"
-                  target="_blank"
-                  rel="noopener"
-                  class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
-                  >LIVE PORTAL
-                  <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span></a
-                >
-                <a
-                  href="https://github.com/rinshidvp/AURA"
-                  target="_blank"
-                  rel="noopener"
-                  class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
-                  >GITHUB
-                  <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span></a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- More Project 3: Rinshid Note -->
+          <!-- More project 6: Rinshid Note -->
           <div
             class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5"
           >
@@ -1166,130 +1264,6 @@
                 >
               </div>
             </div>
-          </div>
-          <!-- More Project 4: RentVibe -->
-          <div
-            class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5"
-          >
-            <div class="aspect-video overflow-hidden">
-              <img
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                alt="RentVibe project preview graphic"
-                src="images/project-6.svg"
-                width="800"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
-              <h4
-                class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight"
-              >
-                RentVibe
-              </h4>
-              <span
-                class="font-label-caps text-label-caps text-primary-container"
-                >MARKETPLACE</span
-              >
-              <p class="text-xs text-on-surface-variant opacity-80">
-                React · Supabase · Vercel
-              </p>
-              <p class="text-sm text-on-surface-variant mt-1">
-                Rental &amp; sales platform connecting local businesses with
-                consumers, with an admin-curated inventory quality-control
-                workflow.
-              </p>
-              <div class="flex gap-4 mt-auto pt-4">
-                <a
-                  href="https://rentvibe.vercel.app/"
-                  target="_blank"
-                  rel="noopener"
-                  class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
-                  >LIVE
-                  <span class="material-symbols-outlined text-sm"
-                    >arrow_outward</span
-                  ></a
-                >
-                <a
-                  href="https://github.com/rinshidvp/rentvibe-landing"
-                  target="_blank"
-                  rel="noopener"
-                  class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
-                  >GITHUB
-                  <span class="material-symbols-outlined text-sm"
-                    >arrow_outward</span
-                  ></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- FOSS & Open Source: a distinct green accent, separate from client work -->
-      <section
-        id="foss"
-        aria-labelledby="foss-title"
-        class="foss-section scroll-mt-[84px] md:scroll-mt-[100px] border-t border-white/10"
-      >
-        <div class="max-w-container-max mx-auto px-gutter py-section-gap-mobile md:py-section-gap-desktop">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <p class="foss-accent font-label-caps text-label-caps mb-4">FOSS &amp; OPEN SOURCE</p>
-              <h2 id="foss-title" class="font-headline-xl text-headline-xl mb-6">
-                Build it.<br />Share it.<br /><span class="foss-accent">Make it useful.</span>
-              </h2>
-              <p class="foss-role font-label-caps text-label-caps inline-flex items-center gap-2 mb-6">
-                <span class="material-symbols-outlined text-xl" aria-hidden="true">groups</span>
-                Vice Chair · FOSS
-              </p>
-              <p class="foss-muted font-body-lg text-body-lg max-w-xl">
-                Free and open-source software is part of how I build.
-                BlinkBreak is my FOSS project: a small, private tool for
-                anyone who spends a little too long at a screen.
-              </p>
-            </div>
-            <article class="foss-card" aria-labelledby="blinkbreak-title">
-              <div class="foss-preview" aria-hidden="true">
-                <span class="foss-preview-label font-label-caps text-label-caps">A SMALL REMINDER TO</span>
-                <svg class="foss-eye" viewBox="0 0 180 180" fill="none">
-                  <circle cx="90" cy="90" r="76" stroke="currentColor" stroke-opacity="0.16" stroke-width="2" />
-                  <circle cx="90" cy="90" r="76" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="355 123" transform="rotate(-90 90 90)" />
-                  <path d="M44 90C56 70 72 60 90 60s34 10 46 30c-12 20-28 30-46 30S56 110 44 90Z" stroke="currentColor" stroke-width="3" />
-                  <circle cx="90" cy="90" r="14" stroke="currentColor" stroke-width="3" />
-                </svg>
-                <span class="font-headline-md text-2xl">Blink. Breathe. Reset.</span>
-              </div>
-              <div class="p-6 md:p-8">
-                <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-                  <h3 id="blinkbreak-title" class="font-headline-md text-2xl md:text-headline-md">BlinkBreak</h3>
-                  <span class="foss-badge font-label-caps text-label-caps">OPEN SOURCE · MIT</span>
-                </div>
-                <p class="foss-muted text-sm mb-4">
-                  Calm reminders to blink, look away, and move. Runs quietly
-                  on your desktop, with no accounts or tracking and light
-                  and dark themes. Available for Windows, macOS, and Linux.
-                </p>
-                <p class="foss-muted text-xs mb-6">Tauri 2 · React · TypeScript · Rust</p>
-                <div class="flex flex-wrap items-center gap-4">
-                  <a
-                    href="https://github.com/rinshidvp/blinkbreak/releases/latest"
-                    target="_blank"
-                    rel="noopener"
-                    class="foss-download font-label-caps text-label-caps inline-flex items-center gap-2"
-                    >GET BLINKBREAK
-                    <span class="material-symbols-outlined text-sm" aria-hidden="true">download</span></a
-                  >
-                  <a
-                    href="https://github.com/rinshidvp/blinkbreak"
-                    target="_blank"
-                    rel="noopener"
-                    class="foss-source font-label-caps text-label-caps inline-flex items-center gap-2"
-                    >VIEW SOURCE
-                    <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span></a
-                  >
-                </div>
-              </div>
-            </article>
           </div>
         </div>
       </section>
@@ -2009,7 +1983,7 @@
                 class="w-2 h-2 rounded-full bg-primary-container animate-pulse flex-shrink-0"
               ></span>
               <span class="font-label-caps text-label-caps text-on-surface-variant"
-                >Open to freelance &amp; consulting work</span
+                >Available for freelance projects</span
               >
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -2231,6 +2205,13 @@
             target="_blank"
             rel="noopener"
             >My Notebook</a
+          >
+          <a
+            class="font-label-caps text-label-caps text-secondary-fixed-dim hover:text-on-surface transition-colors"
+            href="https://rinshid-note.vercel.app/writing/"
+            target="_blank"
+            rel="noopener"
+            >My Writing</a
           >
         </div>
         <div class="font-body-md text-body-md text-secondary-fixed-dim mt-8">

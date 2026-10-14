@@ -98,12 +98,17 @@ textarea:focus-visible {
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
 }
 
-/* The FOSS section has its own green palette; client-work styling stays orange. */
-.foss-section {
+/* Only the first project card uses green; the rest of the portfolio stays orange. */
+.foss-card {
   --foss-accent: #a3e6b1;
   --foss-muted: #b6cbbc;
   color: #edf5ee;
   background: radial-gradient(ellipse at 85% 20%, #1a3829 0%, #101c16 55%, #101713 100%);
+  min-width: 0;
+  border: 1px solid #a3e6b133;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px #00000033;
 }
 
 .foss-accent {
@@ -114,27 +119,13 @@ textarea:focus-visible {
   color: var(--foss-muted);
 }
 
-.foss-role,
 .foss-badge {
   color: var(--foss-accent);
   background: #a3e6b10d;
   border: 1px solid #a3e6b133;
   border-radius: 999px;
-  padding: 10px 14px;
-}
-
-.foss-badge {
   font-size: 10px;
   padding: 6px 10px;
-}
-
-.foss-card {
-  min-width: 0;
-  background: #132019;
-  border: 1px solid #a3e6b133;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 24px 60px #00000033;
 }
 
 .foss-preview {
@@ -184,8 +175,15 @@ textarea:focus-visible {
   color: #edf5ee;
 }
 
-.foss-section a:focus-visible {
+.foss-card a:focus-visible {
   outline-color: var(--foss-accent);
+}
+
+@media (min-width: 768px) {
+  .foss-preview {
+    border-bottom: 0;
+    border-right: 1px solid #a3e6b11f;
+  }
 }
 
 /* Honest disabled state for not-yet-launched project links */
