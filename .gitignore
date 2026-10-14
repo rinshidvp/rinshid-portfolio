@@ -5,8 +5,5 @@ dist/
 .astro/
 .vercel/
 .local/
-.env*
 test-results/
 playwright-report/
-
-.vercel

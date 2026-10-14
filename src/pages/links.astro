@@ -1,9 +1,0 @@
----
-import Shell from '../layouts/Shell.astro';
-import { publicLinks } from '../config/site';
-const groups = [...new Set(publicLinks.map((link) => link.group))];
----
-<Shell title="All links" description="My public profiles, source code, and places to connect.">
-  <header class="page-head"><p class="eyebrow">Around the internet</p><h1>All links.</h1><p class="summary">Where to find me, explore my code, and connect.</p></header>
-  {groups.map((group) => <section class="section"><h2>{group}</h2><ul class="link-directory">{publicLinks.filter((link) => link.group === group).map((link) => <li><a href={link.url}>{link.platform} <span aria-hidden="true">↗</span></a><p>{link.purpose}</p></li>)}</ul></section>)}
-</Shell>

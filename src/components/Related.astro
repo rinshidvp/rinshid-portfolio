@@ -1,5 +1,0 @@
----
-interface Props { entries: { title: string; url: string; kind: string; language: 'en' | 'ml' }[]; }
-const { entries } = Astro.props;
----
-{entries.length > 0 && <section class="section" lang="en"><h2>Keep exploring</h2><ul class="link-directory">{entries.map((entry) => <li><span class="meta">{entry.kind}</span><a href={entry.url} lang={entry.language}>{entry.title} →</a></li>)}</ul></section>}

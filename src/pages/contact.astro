@@ -1,9 +1,0 @@
----
-import Shell from '../layouts/Shell.astro';
-import { site } from '../config/site';
-const linkedin = site.links.find((link) => link.platform === 'LinkedIn')!;
----
-<Shell title="Contact" description="Get in touch about student questions, project feedback, collaboration, or relevant opportunities.">
-  <header class="page-head"><p class="eyebrow">A conversation starts somewhere</p><h1>Say hello.</h1><p class="summary">Have a question, an idea, or a different way of looking at something? I’d like to hear it.</p></header>
-  <article class="prose"><p>You’re welcome to reach out about a student project, feedback on something I’ve built, a possible collaboration, or a relevant opportunity.</p><h2>Email works well</h2><p><a href={`mailto:${site.email}`}>{site.email}</a></p><p>A little context helps: what you’re working on, what you’ve tried, and what you’d like to figure out.</p><h2>Or connect on LinkedIn</h2><p><a href={linkedin.url}>Find me on LinkedIn ↗</a></p><p>For a bug or feature idea in a public project, its GitHub issues are a useful place to keep the conversation with the code.</p></article>
-</Shell>
