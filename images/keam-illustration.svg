@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">CosmIQ KEAM Predictor — your next chapter</title>
+  <desc id="description">An original illustration of a college campus connected to a winding path, representing the journey from a KEAM rank to college options. This is project artwork, not an application screenshot.</desc>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#8CAFA0" stroke-opacity=".18"/>
+    </pattern>
+    <linearGradient id="ground" x1="650" y1="400" x2="1050" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B6CDBE"/>
+      <stop offset="1" stop-color="#91B5A0"/>
+    </linearGradient>
+  </defs>
+  <path fill="#E2EBDF" d="M0 0h1200v750H0z"/>
+  <path fill="url(#grid)" d="M0 0h1200v750H0z"/>
+  <circle cx="1020" cy="150" r="235" fill="#D0E0CF"/>
+  <circle cx="1020" cy="150" r="164" stroke="#BACFB8"/>
+  <circle cx="1020" cy="150" r="105" stroke="#BACFB8"/>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <path fill="#153F35" d="M64 56h34v34H64z"/>
+    <path d="m72 73 6 6 12-13" stroke="#E2EBDF" stroke-width="3"/>
+    <text x="112" y="79" fill="#153F35" font-size="19" font-weight="700" letter-spacing="2">COSMIQ / KEAM PREDICTOR</text>
+    <text x="64" y="215" fill="#153F35" font-size="76" font-weight="700" letter-spacing="-4">Your rank.</text>
+    <text x="64" y="298" fill="#153F35" font-size="76" font-weight="700" letter-spacing="-4">Your next</text>
+    <text x="64" y="381" fill="#DC5A22" font-size="76" font-weight="700" letter-spacing="-4">chapter.</text>
+    <text x="68" y="434" fill="#466359" font-size="24">Explore the possibilities ahead.</text>
+  </g>
+
+  <!-- A path, not a prediction: no invented admissions results or metrics. -->
+  <path d="M70 578h250c62 0 62 86 128 86h113c82 0 82-94 160-94h65" stroke="#B0C6B1" stroke-width="24" stroke-linecap="round"/>
+  <path d="M70 578h250c62 0 62 86 128 86h113c82 0 82-94 160-94h65" stroke="#F7FAF1" stroke-width="3" stroke-dasharray="7 11"/>
+  <circle cx="88" cy="578" r="22" fill="#153F35"/>
+  <circle cx="88" cy="578" r="7" fill="#E2EBDF"/>
+  <circle cx="451" cy="664" r="9" fill="#DC5A22"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2" fill="#466359">
+    <text x="68" y="540">RANK</text>
+    <text x="378" y="620">POSSIBILITIES</text>
+  </g>
+
+  <!-- Isometric campus, drawn specifically for the portfolio. -->
+  <path d="m600 472 289-166 276 159-289 168z" fill="url(#ground)"/>
+  <path d="m600 472 276 161v24L600 496z" fill="#83A18C"/>
+  <path d="m876 633 289-168v24L876 657z" fill="#6F947F"/>
+  <path d="m659 474 217 125 223-129-218-125z" stroke="#E5EDDC" stroke-width="2"/>
+
+  <!-- Main hall and roof. -->
+  <path d="m720 374 137-79 147 85-137 79z" fill="#2A6551"/>
+  <path d="m720 374 147 85v123l-147-85z" fill="#EAE9D7"/>
+  <path d="m867 459 137-79v123l-137 79z" fill="#C6D1B7"/>
+  <path d="m704 370 153-88 163 94-153 88z" fill="#153F35"/>
+  <path d="m704 370 163 94v12l-163-94z" fill="#245440"/>
+  <path d="m867 464 153-88v12l-153 88z" fill="#0D3029"/>
+
+  <!-- Recessed windows on the two faces. -->
+  <g fill="#315E4B">
+    <path d="m741 407 22 13v32l-22-13zm39 23 22 12v32l-22-12zm40 23 22 13v32l-22-13z"/>
+    <path d="m741 458 22 13v32l-22-13zm39 23 22 12v32l-22-12z"/>
+  </g>
+  <g fill="#537B5B">
+    <path d="m887 468 22-13v31l-22 13zm38-22 22-13v31l-22 13zm39-23 22-13v31l-22 13z"/>
+    <path d="m887 517 22-13v31l-22 13zm38-22 22-13v31l-22 13zm39-23 22-13v31l-22 13z"/>
+  </g>
+  <path d="m820 505 27 16v49l-27-16z" fill="#153F35"/>
+  <path d="m808 552 41 24 18-10-41-24z" fill="#F6F1DC"/>
+  <path d="m798 561 41 24 18-10-41-24z" fill="#D2D5BC"/>
+  <path d="m788 570 41 24 18-10-41-24z" fill="#F6F1DC"/>
+
+  <!-- Small clock tower. -->
+  <path d="m822 292 37-21 40 23-37 21z" fill="#F6F1DC"/>
+  <path d="m822 292 40 23v67l-40-23z" fill="#EAE9D7"/>
+  <path d="m862 315 37-21v67l-37 21z" fill="#B4C4A5"/>
+  <path d="m812 289 47-52 50 55-47 27z" fill="#DC5A22"/>
+  <path d="m859 237 50 55-47 27z" fill="#B9481F"/>
+  <ellipse cx="841" cy="335" rx="10" ry="14" transform="rotate(-24 841 335)" fill="#315E4B"/>
+  <path d="M841 325v12l7 5" stroke="#F6F1DC" stroke-width="2"/>
+
+  <!-- Trees, deliberately simple and architectural. -->
+  <g>
+    <path d="M678 468v-59m348 135v-63m65-48v-53" stroke="#537B5B" stroke-width="7"/>
+    <ellipse cx="678" cy="397" rx="26" ry="38" fill="#5C8862"/>
+    <ellipse cx="1026" cy="469" rx="29" ry="42" fill="#37694B"/>
+    <ellipse cx="1091" cy="368" rx="23" ry="34" fill="#5C8862"/>
+    <path d="M678 381v31m348 39v35m65-131v28" stroke="#82A17B" stroke-width="2"/>
+  </g>
+
+  <!-- Wayfinding pin. -->
+  <path d="M1050 193c-23 0-42 18-42 41 0 31 42 67 42 67s42-36 42-67c0-23-19-41-42-41Z" fill="#DC5A22"/>
+  <circle cx="1050" cy="234" r="15" fill="#F6F1DC"/>
+  <path d="m1043 234 5 5 10-11" stroke="#DC5A22" stroke-width="3"/>
+  <path d="M1050 314v29" stroke="#7D9C83" stroke-width="2" stroke-dasharray="4 5"/>
+
+  <path d="M64 705h1072" stroke="#B7CCB5"/>
+  <g fill="#466359" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="2">
+    <text x="64" y="732">A LITTLE CLARITY FOR A BIG DECISION.</text>
+    <text x="1136" y="732" text-anchor="end">PROJECT ILLUSTRATION</text>
+  </g>
+</svg>

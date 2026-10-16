@@ -126,11 +126,11 @@
               full: "0.75rem",
             },
             spacing: {
-              "section-gap-mobile": "72px",
+              "section-gap-mobile": "56px",
               base: "8px",
               "container-max": "1280px",
               gutter: "24px",
-              "section-gap-desktop": "160px",
+              "section-gap-desktop": "88px",
             },
             fontFamily: {
               "display-lg": ["Syne"],
@@ -199,7 +199,7 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=20261016-4" />
   </head>
   <body
     class="bg-surface-container-lowest font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-surface-container-lowest"
@@ -219,60 +219,17 @@
         >
           RINSHID
         </a>
-        <nav
-          class="hidden lg:flex items-center gap-7"
-          aria-label="Primary site links"
-        >
-          <ul class="flex items-center gap-7">
-            <li>
-              <a
-                class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300"
-                href="#about"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300"
-                href="#projects"
-                >Projects</a
-              >
-            </li>
-            <li>
-              <a
-                class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300"
-                href="#experience"
-                >Experience</a
-              >
-            </li>
-            <li>
-              <a
-                class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300"
-                href="#skills"
-                >Skills</a
-              >
-            </li>
-            <li>
-              <a
-                class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300"
-                href="#education"
-                >Education</a
-              >
-            </li>
-            <li>
-              <a
-                class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300"
-                href="#contact"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </nav>
+        <ul class="hidden lg:flex items-center gap-8 site-links">
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="https://rinshid-note.vercel.app/writing/" target="_blank" rel="noopener">Writing <span aria-hidden="true">↗</span></a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
         <a
           class="hidden lg:inline-flex items-center justify-center bg-primary-container text-surface-container-lowest font-label-caps text-label-caps px-6 py-3 rounded hover:scale-95 transition-transform duration-300"
           href="#contact"
         >
-          Connect With Me
+          Let’s Talk <span aria-hidden="true" class="ml-2">↗</span>
         </a>
         <button
           type="button"
@@ -290,56 +247,11 @@
         aria-hidden="true"
         class="lg:hidden flex-col gap-1 px-gutter pb-6 bg-background border-t border-white/10"
       >
-        <ul class="flex flex-col gap-1 pt-4">
-          <li>
-            <a
-              class="flex items-center py-3 font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300"
-              href="#about"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              class="flex items-center py-3 font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300"
-              href="#projects"
-              >Projects</a
-            >
-          </li>
-          <li>
-            <a
-              class="flex items-center py-3 font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300"
-              href="#experience"
-              >Experience</a
-            >
-          </li>
-          <li>
-            <a
-              class="flex items-center py-3 font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300"
-              href="#skills"
-              >Skills</a
-            >
-          </li>
-          <li>
-            <a
-              class="flex items-center py-3 font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300"
-              href="#education"
-              >Education</a
-            >
-          </li>
-          <li>
-            <a
-              class="flex items-center py-3 font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300"
-              href="#contact"
-              >Contact</a
-            >
-          </li>
-          <li class="pt-2">
-            <a
-              class="flex items-center justify-center bg-primary-container text-surface-container-lowest font-label-caps text-label-caps px-6 py-4 rounded"
-              href="#contact"
-              >Connect With Me</a
-            >
-          </li>
+        <ul class="flex flex-col gap-1 pt-4 site-links">
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="https://rinshid-note.vercel.app/writing/" target="_blank" rel="noopener">Writing <span aria-hidden="true">↗</span></a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -350,521 +262,161 @@
     >
       <!-- Hero Section -->
       <section
-        class="scroll-mt-[84px] md:scroll-mt-[100px] max-w-container-max mx-auto px-gutter pt-12 md:pt-20 pb-section-gap-mobile md:pb-section-gap-desktop"
+        class="hero max-w-container-max mx-auto px-gutter"
+        aria-labelledby="hero-title"
       >
-        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-          <div class="w-full lg:w-1/2 flex flex-col gap-6 relative z-10">
-            <div class="flex items-center gap-4 order-1 lg:order-none">
-              <div class="relative flex-shrink-0 lg:hidden">
-                <div
-                  aria-hidden="true"
-                  class="absolute -inset-2 bg-primary-container/20 rounded-full blur-xl pointer-events-none"
-                ></div>
-                <img
-                  src="images/portrait.jpg"
-                  alt="Muhammed Rinshid V P"
-                  width="200"
-                  height="200"
-                  loading="eager"
-                  class="relative w-24 h-24 rounded-lg object-cover border border-white/10"
-                />
-              </div>
-              <div class="flex flex-col gap-1">
-                <p class="font-headline-md text-base leading-tight text-on-surface lg:hidden">
-                  Muhammed Rinshid V P
-                </p>
-                <p
-                  class="font-label-caps text-label-caps text-primary-container"
-                >
-                  FULL-STACK DEVELOPER · AI &amp; AUTOMATION · FOUNDER, COSMIQ
-                </p>
-              </div>
-            </div>
-            <h1
-              class="order-2 lg:order-none font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface"
-            >
-              I build software that makes everyday work easier.
-            </h1>
-            <div class="order-3 lg:order-none flex flex-col sm:flex-row sm:flex-wrap gap-3 mt-2">
-              <a
-                href="#projects"
-                class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-primary-container text-surface-container-lowest font-label-caps text-label-caps px-8 py-4 rounded hover:scale-[0.97] transition-transform duration-300 min-h-[48px]"
-              >
-                View Projects
-                <span class="material-symbols-outlined text-base"
-                  >arrow_outward</span
-                >
-              </a>
-              <a
-                href="https://rinshid-note.vercel.app/writing/"
-                target="_blank"
-                rel="noopener"
-                class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-transparent border border-white/20 text-on-surface font-label-caps text-label-caps px-8 py-4 rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors duration-300 min-h-[48px]"
-              >
-                Read My Writing
-              </a>
-              <a
-                href="#contact"
-                class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-transparent border border-white/20 text-on-surface font-label-caps text-label-caps px-8 py-4 rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors duration-300 min-h-[48px]"
-              >
-                Connect With Me
-              </a>
-            </div>
-            <p class="order-4 lg:order-none font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-              I’m a developer from Kerala building web apps, desktop tools,
-              and AI-powered workflows.
-            </p>
-            <div
-              class="order-5 lg:order-none inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-surface px-4 py-2"
-            >
-              <span
-                class="w-2 h-2 rounded-full bg-primary-container animate-pulse flex-shrink-0"
-              ></span>
-              <span class="font-label-caps text-label-caps text-on-surface-variant"
-                >Available for freelance projects</span
-              >
-            </div>
-            <p
-              class="order-6 lg:order-none font-body-md text-sm text-on-surface-variant border-t border-white/10 pt-6 mt-2"
-            >
-              6+ production projects shipped · 100+ students trained in AI
-              literacy · Shipped AWS automation infrastructure for an
-              international client
-            </p>
-            <div class="order-7 lg:order-none flex flex-col gap-3 pt-2">
-              <p class="font-label-caps text-label-caps text-on-surface-variant opacity-60">
-                Currently building with
-              </p>
-              <div class="flex flex-wrap gap-3">
-                <span
-                  class="font-display-lg text-sm tracking-wide border border-white/10 bg-surface rounded px-4 py-2 text-on-surface-variant"
-                  >AZMORA</span
-                >
-                <span
-                  class="font-display-lg text-sm tracking-wide border border-white/10 bg-surface rounded px-4 py-2 text-on-surface-variant"
-                  >COSMIQ</span
-                >
-                <span
-                  class="font-display-lg text-sm tracking-wide border border-white/10 bg-surface rounded px-4 py-2 text-on-surface-variant"
-                  >WUSOOL CAPITAL</span
-                >
-              </div>
-            </div>
-          </div>
-          <div class="hidden lg:block lg:w-1/2 relative">
-            <div
-              aria-hidden="true"
-              class="absolute -top-10 right-0 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"
-            ></div>
-            <div class="relative rounded-lg overflow-hidden border border-white/10">
-              <img
-                class="w-full h-auto object-cover aspect-[4/3] lg:aspect-[4/5]"
-                alt="Muhammed Rinshid V P working at a backlit desktop setup"
-                src="images/hero.jpg"
-                width="1448"
-                height="1086"
-              />
-              <div
-                aria-hidden="true"
-                class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/50 via-transparent to-transparent"
-              ></div>
-            </div>
-            <div
-              class="absolute -bottom-6 left-6 right-6 sm:right-auto flex flex-wrap gap-3"
-            >
-              <div
-                class="bg-surface rounded px-6 py-4 flex items-center gap-3 border border-white/10"
-              >
-                <span class="font-headline-md text-2xl text-on-surface">6+</span>
-                <span
-                  class="font-body-md text-sm text-on-surface-variant leading-tight"
-                  >Projects<br />Shipped</span
-                >
-              </div>
-              <div
-                class="bg-surface rounded px-6 py-4 flex items-center gap-3 border border-white/10"
-              >
-                <span class="font-headline-md text-2xl text-on-surface">100+</span>
-                <span
-                  class="font-body-md text-sm text-on-surface-variant leading-tight"
-                  >Students<br />Trained</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- About Section -->
-      <section
-        class="scroll-mt-[84px] md:scroll-mt-[100px] max-w-container-max mx-auto px-gutter py-section-gap-mobile md:py-section-gap-desktop border-t border-white/10"
-        id="about"
-      >
-        <p class="font-label-caps text-label-caps text-primary-container mb-3">
-          ABOUT
-        </p>
-        <h2
-          class="font-headline-xl text-headline-xl text-on-surface mb-10 max-w-2xl"
-        >
-          Less prototype. More production.
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-          <div
-            class="hover-lift bg-surface rounded-lg border border-white/5 p-6"
-          >
-            <span
-              class="material-symbols-outlined text-primary-container text-2xl mb-3 block"
-              >person</span
-            >
-            <h3
-              class="font-label-caps text-label-caps text-on-surface tracking-widest mb-2"
-            >
-              WHO I AM
-            </h3>
-            <p class="text-sm text-on-surface-variant">
-              A second-year B.Tech CS student, AI automation engineer, and
-              founder — based in Kerala, India, working remote.
-            </p>
-          </div>
-          <div
-            class="hover-lift bg-surface rounded-lg border border-white/5 p-6"
-          >
-            <span
-              class="material-symbols-outlined text-primary-container text-2xl mb-3 block"
-              >build_circle</span
-            >
-            <h3
-              class="font-label-caps text-label-caps text-on-surface tracking-widest mb-2"
-            >
-              WHAT I BUILD
-            </h3>
-            <p class="text-sm text-on-surface-variant">
-              Production n8n + AWS automation pipelines, and full-stack
-              products with Next.js, React, and Supabase.
-            </p>
-          </div>
-          <div
-            class="hover-lift bg-surface rounded-lg border border-white/5 p-6"
-          >
-            <span
-              class="material-symbols-outlined text-primary-container text-2xl mb-3 block"
-              >diversity_3</span
-            >
-            <h3
-              class="font-label-caps text-label-caps text-on-surface tracking-widest mb-2"
-            >
-              WHO I HELP
-            </h3>
-            <p class="text-sm text-on-surface-variant">
-              Businesses that need manual operations automated, and students
-              who want practical, usable AI skills.
-            </p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-20">
-          <div class="relative order-2 md:order-1">
-            <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-4">
-              A little more, in my own words
-            </h3>
-            <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-              I founded CosmIQ to bring AI automation and full-stack software
-              to businesses across India and the UK, and I currently
-              engineer production automation infrastructure on AWS for an
-              international client. Outside client work, I've trained 100+
-              students in practical AI literacy — I like building systems
-              about as much as I like teaching people to use them.
-            </p>
-            <a
-              class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-transparent border border-white/20 text-on-surface font-label-caps text-label-caps px-8 py-4 rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors duration-300 min-h-[48px]"
-              href="Rinshid_CV.html"
-              target="_blank"
-              rel="noopener"
-            >
-              Download CV
-            </a>
-          </div>
-          <div class="relative order-1 md:order-2 max-w-sm mx-auto md:max-w-none">
-            <div
-              class="absolute inset-0 border border-primary-container translate-x-4 translate-y-4 rounded-lg z-0"
-              aria-hidden="true"
-            ></div>
-            <img
-              alt="Portrait of Muhammed Rinshid V P"
-              class="relative z-10 w-full h-auto object-cover rounded-lg aspect-square"
-              src="images/portrait.jpg"
-              width="900"
-              height="900"
-              loading="lazy"
-            />
-          </div>
-        </div>
-        <!-- Journey timeline -->
-        <div id="journey">
-          <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-8">
-            The journey so far
-          </h3>
-          <div class="flex flex-col">
-            <div
-              class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4"
-            >
-              <div class="flex items-center gap-4">
-                <span
-                  class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-xl"
-                    >school</span
-                  >
-                </span>
-                <div>
-                  <h4 class="font-headline-md text-base md:text-lg text-on-surface">
-                    TKM College of Engineering
-                  </h4>
-                  <p class="text-sm text-on-surface-variant">
-                    B.Tech Computer Science &amp; Engineering, in progress
-                  </p>
-                </div>
-              </div>
-              <span
-                class="font-label-caps text-label-caps text-on-surface-variant opacity-60 flex-shrink-0"
-                >Expected 2029</span
-              >
-            </div>
-            <div
-              class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4"
-            >
-              <div class="flex items-center gap-4">
-                <span
-                  class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-xl"
-                    >rocket_launch</span
-                  >
-                </span>
-                <div>
-                  <h4 class="font-headline-md text-base md:text-lg text-on-surface">
-                    Founded CosmIQ
-                  </h4>
-                  <p class="text-sm text-on-surface-variant">
-                    AI automation, full-stack products &amp; AI education
-                  </p>
-                </div>
-              </div>
-              <span
-                class="font-label-caps text-label-caps text-on-surface-variant opacity-60 flex-shrink-0"
-                >Oct 2025</span
-              >
-            </div>
-            <div
-              class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4"
-            >
-              <div class="flex items-center gap-4">
-                <span
-                  class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-xl"
-                    >workspace_premium</span
-                  >
-                </span>
-                <div>
-                  <h4 class="font-headline-md text-base md:text-lg text-on-surface">
-                    AI literacy certifications
-                  </h4>
-                  <p class="text-sm text-on-surface-variant">
-                    Intel AI Aware Badge · Classroom of Tomorrow Using AI
-                    (Udemy)
-                  </p>
-                </div>
-              </div>
-              <span
-                class="font-label-caps text-label-caps text-on-surface-variant opacity-60 flex-shrink-0"
-                >2025</span
-              >
-            </div>
-            <div
-              class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4"
-            >
-              <div class="flex items-center gap-4">
-                <span
-                  class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-xl"
-                    >psychology</span
-                  >
-                </span>
-                <div>
-                  <h4 class="font-headline-md text-base md:text-lg text-on-surface">
-                    Advanced AI certifications
-                  </h4>
-                  <p class="text-sm text-on-surface-variant">
-                    AI &amp; Prompt Engineering (IIT Madras) · Claude 101
-                    (Anthropic)
-                  </p>
-                </div>
-              </div>
-              <span
-                class="font-label-caps text-label-caps text-on-surface-variant opacity-60 flex-shrink-0"
-                >2026</span
-              >
-            </div>
-            <div
-              class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4"
-            >
-              <div class="flex items-center gap-4">
-                <span
-                  class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-xl"
-                    >smart_toy</span
-                  >
-                </span>
-                <div>
-                  <h4 class="font-headline-md text-base md:text-lg text-on-surface">
-                    Joined Azmora
-                  </h4>
-                  <p class="text-sm text-on-surface-variant">
-                    AI Automation Engineer — Wusool Capital automation
-                    infrastructure
-                  </p>
-                </div>
-              </div>
-              <span
-                class="font-label-caps text-label-caps text-on-surface-variant opacity-60 flex-shrink-0"
-                    >June 2026 – Aug 2026</span
-              >
-            </div>
-            <div class="flex items-center gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4">
-              <span class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0">
-                <span class="material-symbols-outlined text-primary-container text-xl" aria-hidden="true">groups</span>
-              </span>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <div class="hero-intro">
+              <img src="images/portrait.jpg" alt="Muhammed Rinshid V P" width="64" height="64" class="hero-avatar" />
               <div>
-                <h4 class="font-headline-md text-base md:text-lg text-on-surface">FOSS — Vice Chair</h4>
-                <p class="text-sm text-on-surface-variant">Free and open-source community leadership</p>
+                <p class="hero-name">Muhammed Rinshid V P</p>
+                <p class="hero-role">Developer · AI &amp; automation · Founder, CosmIQ</p>
               </div>
+            </div>
+            <h1 id="hero-title" class="hero-title">
+              Software that makes <span>work easier.</span>
+            </h1>
+            <p class="hero-description">
+              I’m Rinshid, a developer from Kerala building web apps,
+              desktop tools, and AI-powered workflows.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="button-primary">View Projects <span aria-hidden="true">↗</span></a>
+              <a href="#contact" class="button-secondary">Let’s Talk <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="hero-availability"><span aria-hidden="true"></span> Available for freelance projects</p>
+          </div>
+          <figure class="hero-visual">
+            <img src="images/hero.jpg" alt="Muhammed Rinshid V P working at a backlit desktop setup" width="1448" height="1086" fetchpriority="high" />
+            <figcaption><span class="hero-image-dot" aria-hidden="true"></span> Based in Kerala. Building for everywhere.</figcaption>
+          </figure>
+        </div>
+        <div class="hero-proof">
+          <p><strong>6+</strong> production projects shipped</p>
+          <p><strong>100+</strong> students trained in AI literacy</p>
+          <p class="hero-proof-detail">Shipped AWS automation infrastructure for an international client</p>
+        </div>
+        <div class="hero-collaborators">
+          <p>Built with &amp; for</p>
+          <div><span>AZMORA</span><span>COSMIQ</span><span>WUSOOL CAPITAL</span></div>
+        </div>
+      </section>
+      <aside class="identity-strip max-w-container-max mx-auto px-gutter" aria-label="Design, code, and automation" data-paused="false">
+        <div class="identity-toolbar">
+          <p>ALWAYS BUILDING</p>
+          <button type="button" class="identity-toggle" aria-pressed="false" aria-controls="identity-track" hidden>Pause motion</button>
+        </div>
+        <p class="sr-only">Muhammed Rinshid V P — design, code, and automation.</p>
+        <div class="identity-window" aria-hidden="true">
+          <div class="identity-viewport">
+            <div class="identity-track" id="identity-track">
+              <div class="identity-group"><span class="identity-name">MUHAMMED RINSHID V P</span><span class="identity-star">✳</span><span class="identity-craft">DESIGN. CODE. AUTOMATE.</span><span class="identity-star">✳</span></div>
+              <div class="identity-group"><span class="identity-name">MUHAMMED RINSHID V P</span><span class="identity-star">✳</span><span class="identity-craft">DESIGN. CODE. AUTOMATE.</span><span class="identity-star">✳</span></div>
             </div>
           </div>
         </div>
-      </section>
+      </aside>
       <!-- Projects Section -->
       <section
         class="scroll-mt-[84px] md:scroll-mt-[100px] max-w-container-max mx-auto px-gutter py-section-gap-mobile md:py-section-gap-desktop border-t border-white/10"
         id="projects"
       >
         <p class="font-label-caps text-label-caps text-primary-container mb-3">
-          PROJECTS
+          SELECTED WORK
         </p>
         <h2 class="font-headline-xl text-headline-xl text-on-surface mb-4">
-          Selected Projects
+          Built to be useful.
         </h2>
         <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
-          Desktop tools, student platforms, and AI-powered workflows.
-          A selection of what I build — starting with BlinkBreak, my
-          free and open-source desktop companion.
+          Desktop tools, student platforms, and thoughtful software for
+          everyday problems. Here are three to start with.
         </p>
-        <!-- First project: BlinkBreak. The old #foss link still reaches this card. -->
-        <article id="foss" class="foss-card grid grid-cols-1 md:grid-cols-2 mb-8 scroll-mt-[84px] md:scroll-mt-[100px]" aria-labelledby="blinkbreak-title">
-          <div class="foss-preview" aria-hidden="true">
-            <span class="foss-preview-label font-label-caps text-label-caps">A SMALL REMINDER TO</span>
-            <svg class="foss-eye" viewBox="0 0 180 180" fill="none">
-              <circle cx="90" cy="90" r="76" stroke="currentColor" stroke-opacity="0.16" stroke-width="2" />
-              <circle cx="90" cy="90" r="76" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="355 123" transform="rotate(-90 90 90)" />
-              <path d="M44 90C56 70 72 60 90 60s34 10 46 30c-12 20-28 30-46 30S56 110 44 90Z" stroke="currentColor" stroke-width="3" />
-              <circle cx="90" cy="90" r="14" stroke="currentColor" stroke-width="3" />
-            </svg>
-            <span class="font-headline-md text-2xl">Blink. Breathe. Reset.</span>
-          </div>
-          <div class="p-6 md:p-8 flex flex-col justify-center">
-            <p class="foss-accent font-label-caps text-label-caps mb-3">MY FOSS PROJECT · DESKTOP</p>
-            <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-              <h3 id="blinkbreak-title" class="font-headline-md text-2xl md:text-headline-md">BlinkBreak</h3>
-              <span class="foss-badge font-label-caps text-label-caps">OPEN SOURCE · MIT</span>
-            </div>
-            <p class="foss-muted text-sm mb-4">
-              Calm reminders to blink, look away, and move. Runs quietly
-              on your desktop, with no accounts or tracking and light
-              and dark themes. Available for Windows, macOS, and Linux.
-            </p>
-            <p class="foss-muted text-xs mb-6">Tauri 2 · React · TypeScript · Rust</p>
-            <div class="flex flex-wrap items-center gap-4">
-              <a
-                href="https://github.com/rinshidvp/blinkbreak/releases/latest"
-                target="_blank"
-                rel="noopener"
-                class="foss-download font-label-caps text-label-caps inline-flex items-center gap-2"
-                >GET BLINKBREAK
-                <span class="material-symbols-outlined text-sm" aria-hidden="true">download</span></a
-              >
-              <a
-                href="https://github.com/rinshidvp/blinkbreak"
-                target="_blank"
-                rel="noopener"
-                class="foss-source font-label-caps text-label-caps inline-flex items-center gap-2"
-                >VIEW SOURCE
-                <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span></a
-              >
+        <div class="project-carousel" role="region" aria-label="Featured projects">
+          <div class="project-navigation" hidden>
+            <p class="project-status" role="status" aria-live="polite" aria-atomic="true"></p>
+            <div class="project-controls">
+              <button type="button" class="project-arrow" data-project-step="-1" aria-label="Previous project" aria-controls="project-stage"><span aria-hidden="true">←</span></button>
+              <div class="project-dots" role="group" aria-label="Choose a project">
+                <button type="button" data-project-to="0" aria-label="Show BlinkBreak" aria-pressed="false" aria-controls="project-stage"><span></span></button>
+                <button type="button" data-project-to="1" aria-label="Show CosmIQ Sync" aria-pressed="false" aria-controls="project-stage"><span></span></button>
+                <button type="button" data-project-to="2" aria-label="Show CosmIQ KEAM Predictor" aria-pressed="false" aria-controls="project-stage"><span></span></button>
+              </div>
+              <button type="button" class="project-arrow" data-project-step="1" aria-label="Next project" aria-controls="project-stage"><span aria-hidden="true">→</span></button>
             </div>
           </div>
-        </article>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <!-- Priority project 2: CosmIQ Sync -->
-          <article class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5" aria-labelledby="sync-title">
-            <div class="aspect-video overflow-hidden">
-              <img
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                alt="CosmIQ Sync project preview graphic"
-                src="images/project-4.svg"
-                width="800"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
-              <h3 id="sync-title" class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight">CosmIQ Sync</h3>
-              <span class="font-label-caps text-label-caps text-primary-container">DEV TOOLS</span>
-              <p class="text-xs text-on-surface-variant opacity-80">React · TypeScript · Supabase · Vercel</p>
-              <p class="text-sm text-on-surface-variant mt-1">
-                Move code snippets and screenshots between a shared lab
-                computer and your own device using a 5-digit session key.
-                No account needed, with real-time sync and scheduled expiry.
-              </p>
-              <div class="flex flex-wrap gap-4 mt-auto pt-4">
-                <a href="https://cosmiq-sync.vercel.app/" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
-                  LIVE <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
-                </a>
-                <a href="https://github.com/rinshidvp/cosmiq-sync" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
-                  GITHUB <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
-                </a>
+          <p class="project-gesture-hint" hidden>Swipe or drag the cards · Use ← → when the gallery is focused</p>
+          <div class="project-stage featured-projects" id="project-stage">
+            <!-- The old #foss link still selects and reaches BlinkBreak. -->
+            <article id="foss" class="project-slide project-slide-blinkbreak scroll-mt-[84px] md:scroll-mt-[100px]" aria-labelledby="blinkbreak-title">
+              <div class="project-face">
+                <div class="project-preview project-preview-blinkbreak">
+                  <img src="images/preview-blinkbreak.jpg" alt="BlinkBreak’s light interface with configurable reminders for blinking, looking away, posture, movement, and rest" width="1290" height="640" loading="lazy" draggable="false" />
+                  <span class="project-art-caption">A calmer desktop companion.</span>
+                </div>
+                <div class="project-face-title">
+                  <p>MY FOSS PROJECT · DESKTOP</p>
+                  <h3 id="blinkbreak-title">BlinkBreak</h3>
+                  <span>OPEN SOURCE · MIT</span>
+                </div>
               </div>
-            </div>
-          </article>
-          <!-- Priority project 3: CosmIQ KEAM Predictor -->
-          <article class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5" aria-labelledby="keam-title">
-            <div class="aspect-video bg-primary-container/10 flex flex-col items-center justify-center gap-3" aria-hidden="true">
-              <span class="material-symbols-outlined text-6xl text-primary-container">school</span>
-              <span class="font-label-caps text-label-caps text-on-surface-variant">YOUR RANK. YOUR OPTIONS.</span>
-            </div>
-            <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
-              <h3 id="keam-title" class="font-headline-md text-2xl md:text-headline-md text-on-surface leading-tight">CosmIQ KEAM Predictor</h3>
-              <span class="font-label-caps text-label-caps text-primary-container">EDTECH · DATA</span>
-              <p class="text-xs text-on-surface-variant opacity-80">Next.js · TypeScript · Supabase · Tailwind CSS</p>
-              <p class="text-sm text-on-surface-variant mt-1">
-                Explore Kerala engineering colleges using your KEAM rank
-                and category, with filters for college, branch, and allotment
-                phase. Based on historical cutoffs, not a guarantee of admission.
-              </p>
-              <div class="flex flex-wrap gap-4 mt-auto pt-4">
-                <a href="https://cosmiq-keam-predictor.vercel.app/" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
-                  LIVE <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
-                </a>
-                <a href="https://github.com/rinshidvp/cosmiq-keam-predictor" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
-                  GITHUB <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
-                </a>
+              <div class="project-info">
+                <p>Calm reminders to blink, look away, and move. Runs quietly on your desktop, with no accounts or tracking and light and dark themes. Available for Windows, macOS, and Linux.</p>
+                <p class="project-tech">Tauri 2 · React · TypeScript · Rust</p>
+                <div class="project-links">
+                  <a href="https://github.com/rinshidvp/blinkbreak/releases/latest" target="_blank" rel="noopener" class="button-primary">Get BlinkBreak <span aria-hidden="true">↓</span></a>
+                  <a href="https://github.com/rinshidvp/blinkbreak" target="_blank" rel="noopener" class="button-secondary">View Source <span aria-hidden="true">↗</span></a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+            <article class="project-slide project-slide-sync" aria-labelledby="sync-title">
+              <div class="project-face">
+                <div class="project-preview project-preview-sync">
+                  <img alt="CosmIQ Sync’s public interface for starting a lab workspace or accessing files with a five-digit code" src="images/preview-sync.jpg" width="1280" height="800" loading="lazy" draggable="false" />
+                </div>
+                <div class="project-face-title">
+                  <p>DEV TOOLS</p>
+                  <h3 id="sync-title">CosmIQ Sync</h3>
+                  <span>CODE BETWEEN DEVICES.</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <p>Move code snippets and screenshots between a shared lab computer and your own device using a 5-digit session key. No account needed, with real-time sync and scheduled expiry.</p>
+                <p class="project-tech">React · TypeScript · Supabase · Vercel</p>
+                <div class="project-links">
+                  <a href="https://cosmiq-sync.vercel.app/" target="_blank" rel="noopener" class="button-primary">View Website <span aria-hidden="true">↗</span></a>
+                  <a href="https://github.com/rinshidvp/cosmiq-sync" target="_blank" rel="noopener" class="button-secondary">GitHub <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+            <article class="project-slide project-slide-keam" aria-labelledby="keam-title">
+              <div class="project-face">
+                <div class="project-preview project-preview-keam">
+                  <img src="images/keam-illustration.svg" alt="Original KEAM Predictor illustration: a winding path from your rank to a college campus, with the words ‘Your rank. Your next chapter.’" width="1200" height="750" loading="lazy" draggable="false" />
+                </div>
+                <div class="project-face-title">
+                  <p>EDTECH · DATA</p>
+                  <h3 id="keam-title">CosmIQ KEAM Predictor</h3>
+                  <span>YOUR RANK. YOUR OPTIONS.</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <p>Explore Kerala engineering colleges using your KEAM rank and category, with filters for college, branch, and allotment phase. Based on historical cutoffs, not a guarantee of admission.</p>
+                <p class="project-tech">Next.js · TypeScript · Supabase · Tailwind CSS</p>
+                <div class="project-links">
+                  <a href="https://cosmiq-keam-predictor.vercel.app/" target="_blank" rel="noopener" class="button-primary">View Website <span aria-hidden="true">↗</span></a>
+                  <a href="https://github.com/rinshidvp/cosmiq-keam-predictor" target="_blank" rel="noopener" class="button-secondary">GitHub <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <details class="project-archive">
+          <summary>
+            <span>Explore more projects <span class="archive-count">8 more</span></span>
+            <span class="archive-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="archive-grid grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Priority project 4: CosmIQ OS. Its source repository is private. -->
           <article class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5" aria-labelledby="os-title">
             <div class="aspect-video bg-primary-container/10 flex flex-col items-center justify-center gap-3" aria-hidden="true">
@@ -914,9 +466,6 @@
               </div>
             </div>
           </article>
-        </div>
-        <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-6 mt-16">More projects</h3>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <!-- More project 1: CampusTrade -->
           <div
             class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5"
@@ -1265,7 +814,39 @@
               </div>
             </div>
           </div>
+          </div>
+        </details>
+      </section>
+      <!-- About Section -->
+      <section id="about" class="scroll-mt-[84px] md:scroll-mt-[100px] max-w-container-max mx-auto px-gutter py-section-gap-mobile md:py-section-gap-desktop border-t border-white/10">
+        <div class="about-layout">
+          <div>
+            <p class="font-label-caps text-label-caps text-primary-container mb-3">ABOUT</p>
+            <h2 class="font-headline-xl text-headline-xl text-on-surface mb-6">Less prototype.<br />More production.</h2>
+            <p class="text-body-lg text-on-surface-variant mb-5">I’m a second-year B.Tech CS student, AI automation engineer, and founder based in Kerala, India, working remote.</p>
+            <p class="text-body-md text-on-surface-variant mb-6">I founded CosmIQ to bring AI automation and full-stack software to businesses across India and the UK, and I currently engineer production automation infrastructure on AWS for an international client. Outside client work, I've trained 100+ students in practical AI literacy — I like building systems about as much as I like teaching people to use them.</p>
+            <a href="Rinshid_CV.html" target="_blank" rel="noopener" class="button-secondary">View My CV <span aria-hidden="true">↗</span></a>
+          </div>
+          <figure class="about-portrait">
+            <img src="images/portrait.jpg" alt="Portrait of Muhammed Rinshid V P" width="900" height="900" loading="lazy" />
+            <figcaption>Kerala, India · Available remotely</figcaption>
+          </figure>
         </div>
+        <dl class="about-principles">
+          <div><dt>What I build</dt><dd>Production n8n + AWS automation pipelines, and full-stack products with Next.js, React, and Supabase.</dd></div>
+          <div><dt>Who I help</dt><dd>Businesses that need manual operations automated, and students who want practical, usable AI skills.</dd></div>
+        </dl>
+        <details id="journey" class="journey-details scroll-mt-[84px] md:scroll-mt-[100px]">
+          <summary>The journey so far <span aria-hidden="true">↘</span></summary>
+          <dl class="journey-list">
+            <div><dt>TKM College of Engineering <span>Expected 2029</span></dt><dd>B.Tech Computer Science &amp; Engineering, in progress</dd></div>
+            <div><dt>Founded CosmIQ <span>Oct 2025</span></dt><dd>AI automation, full-stack products &amp; AI education</dd></div>
+            <div><dt>AI literacy certifications <span>2025</span></dt><dd>Intel AI Aware Badge · Classroom of Tomorrow Using AI (Udemy)</dd></div>
+            <div><dt>Advanced AI certifications <span>2026</span></dt><dd>AI &amp; Prompt Engineering (IIT Madras) · Claude 101 (Anthropic)</dd></div>
+            <div><dt>Joined Azmora <span>June 2026 – Aug 2026</span></dt><dd>AI Automation Engineer — Wusool Capital automation infrastructure</dd></div>
+            <div><dt>FOSS — Vice Chair</dt><dd>Free and open-source community leadership</dd></div>
+          </dl>
+        </details>
       </section>
       <!-- What I Do & Experience Split Section -->
       <section
@@ -1279,15 +860,16 @@
               What I do
             </h2>
             <div class="flex flex-col">
-              <div
-                class="group flex justify-between items-center gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4 cursor-pointer"
+              <a
+                href="#contact"
+                class="service-link group flex justify-between items-center gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4"
               >
                 <div class="flex items-center gap-4">
                   <span
                     class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
                   >
                     <span
-                      class="material-symbols-outlined text-primary-container text-xl"
+                      class="material-symbols-outlined text-primary-container text-xl" aria-hidden="true"
                       >bolt</span
                     >
                   </span>
@@ -1304,20 +886,21 @@
                     operations.
                   </p>
                   <span
-                    class="material-symbols-outlined group-hover:text-primary-container transition-colors"
+                    class="material-symbols-outlined group-hover:text-primary-container transition-colors" aria-hidden="true"
                     >arrow_outward</span
                   >
                 </div>
-              </div>
-              <div
-                class="group flex justify-between items-center gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4 cursor-pointer"
+              </a>
+              <a
+                href="#contact"
+                class="service-link group flex justify-between items-center gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4"
               >
                 <div class="flex items-center gap-4">
                   <span
                     class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
                   >
                     <span
-                      class="material-symbols-outlined text-primary-container text-xl"
+                      class="material-symbols-outlined text-primary-container text-xl" aria-hidden="true"
                       >code</span
                     >
                   </span>
@@ -1333,20 +916,21 @@
                     Supabase, and PostgreSQL.
                   </p>
                   <span
-                    class="material-symbols-outlined group-hover:text-primary-container transition-colors"
+                    class="material-symbols-outlined group-hover:text-primary-container transition-colors" aria-hidden="true"
                     >arrow_outward</span
                   >
                 </div>
-              </div>
-              <div
-                class="group flex justify-between items-center gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4 cursor-pointer"
+              </a>
+              <a
+                href="#contact"
+                class="service-link group flex justify-between items-center gap-4 py-6 divider hover:bg-surface transition-colors duration-300 px-4 -mx-4"
               >
                 <div class="flex items-center gap-4">
                   <span
                     class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
                   >
                     <span
-                      class="material-symbols-outlined text-primary-container text-xl"
+                      class="material-symbols-outlined text-primary-container text-xl" aria-hidden="true"
                       >school</span
                     >
                   </span>
@@ -1362,11 +946,11 @@
                     students in practical AI literacy.
                   </p>
                   <span
-                    class="material-symbols-outlined group-hover:text-primary-container transition-colors"
+                    class="material-symbols-outlined group-hover:text-primary-container transition-colors" aria-hidden="true"
                     >arrow_outward</span
                   >
                 </div>
-              </div>
+              </a>
             </div>
           </div>
           <!-- Experience -->
@@ -1871,91 +1455,6 @@
             </div>
           </div>
         </div>
-        <!-- GitHub proof of work strip -->
-        <div>
-          <p class="font-label-caps text-label-caps text-primary-container mb-3">
-            PROOF OF WORK
-          </p>
-          <div class="flex items-baseline justify-between flex-wrap gap-4 mb-8">
-            <h2 class="font-headline-xl text-headline-xl text-on-surface">
-              Open on GitHub
-            </h2>
-            <a
-              href="https://github.com/rinshidvp"
-              target="_blank"
-              rel="noopener"
-              class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
-              >SEE ALL REPOS
-              <span class="material-symbols-outlined text-sm">arrow_outward</span></a
-            >
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <a
-              href="https://github.com/rinshidvp/campus-trade-v2"
-              target="_blank"
-              rel="noopener"
-              class="hover-lift block bg-surface rounded-lg border border-white/5 p-5"
-            >
-              <span class="material-symbols-outlined text-primary-container text-xl mb-3 block"
-                >folder_code</span
-              >
-              <h4 class="font-headline-md text-sm text-on-surface mb-1">
-                campus-trade-v2
-              </h4>
-              <p class="text-xs text-on-surface-variant">
-                Campus marketplace with WhatsApp deep-linking
-              </p>
-            </a>
-            <a
-              href="https://github.com/rinshidvp/pragathi-keam-portal"
-              target="_blank"
-              rel="noopener"
-              class="hover-lift block bg-surface rounded-lg border border-white/5 p-5"
-            >
-              <span class="material-symbols-outlined text-primary-container text-xl mb-3 block"
-                >folder_code</span
-              >
-              <h4 class="font-headline-md text-sm text-on-surface mb-1">
-                pragathi-keam-portal
-              </h4>
-              <p class="text-xs text-on-surface-variant">
-                Official TKMCE KEAM college predictor
-              </p>
-            </a>
-            <a
-              href="https://github.com/rinshidvp/cosmiq-sync"
-              target="_blank"
-              rel="noopener"
-              class="hover-lift block bg-surface rounded-lg border border-white/5 p-5"
-            >
-              <span class="material-symbols-outlined text-primary-container text-xl mb-3 block"
-                >folder_code</span
-              >
-              <h4 class="font-headline-md text-sm text-on-surface mb-1">
-                cosmiq-sync
-              </h4>
-              <p class="text-xs text-on-surface-variant">
-                Zero-login real-time file &amp; code transfer
-              </p>
-            </a>
-            <a
-              href="https://github.com/rinshidvp/ai-meeting-architect"
-              target="_blank"
-              rel="noopener"
-              class="hover-lift block bg-surface rounded-lg border border-white/5 p-5"
-            >
-              <span class="material-symbols-outlined text-primary-container text-xl mb-3 block"
-                >folder_code</span
-              >
-              <h4 class="font-headline-md text-sm text-on-surface mb-1">
-                ai-meeting-architect
-              </h4>
-              <p class="text-xs text-on-surface-variant">
-                Self-hosted AI SDR &amp; meeting intelligence pipeline
-              </p>
-            </a>
-          </div>
-        </div>
       </section>
       <!-- Contact Section -->
       <section
@@ -2219,6 +1718,7 @@
         </div>
       </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="js/project-carousel.js?v=20261016-4"></script>
+    <script src="js/main.js?v=20261016-4"></script>
   </body>
 </html>

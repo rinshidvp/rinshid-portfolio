@@ -4,12 +4,17 @@ document.addEventListener("DOMContentLoaded", function () {
   var mobileNav = document.getElementById("mobile-nav");
 
   if (menuButton && mobileNav) {
-    menuButton.addEventListener("click", function () {
-      var isOpen = mobileNav.classList.toggle("is-open");
-      mobileNav.setAttribute("aria-hidden", !isOpen);
-      menuButton.setAttribute("aria-expanded", isOpen);
+    function setMenuOpen(isOpen) {
+      mobileNav.classList.toggle("is-open", isOpen);
+      mobileNav.setAttribute("aria-hidden", String(!isOpen));
+      menuButton.setAttribute("aria-expanded", String(isOpen));
       menuButton.querySelector(".material-symbols-outlined").textContent =
         isOpen ? "close" : "menu";
+    }
+
+    menuButton.addEventListener("click", function () {
+      var isOpen = !mobileNav.classList.contains("is-open");
+      setMenuOpen(isOpen);
       if (isOpen) {
         mobileNav.querySelector("a")?.focus();
       }
@@ -17,13 +22,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
     mobileNav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        mobileNav.classList.remove("is-open");
-        mobileNav.setAttribute("aria-hidden", "true");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.querySelector(".material-symbols-outlined").textContent =
-          "menu";
+        setMenuOpen(false);
       });
     });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && mobileNav.classList.contains("is-open")) {
+        setMenuOpen(false);
+        menuButton.focus();
+      }
+    });
+
+    window.matchMedia("(min-width: 1024px)").addEventListener("change", function (event) {
+      if (event.matches) setMenuOpen(false);
+    });
+  }
+
+  // Motion stays static without JavaScript and respects live OS preference changes.
+  var identityStrip = document.querySelector(".identity-strip");
+  var motionButton = document.querySelector(".identity-toggle");
+
+  if (identityStrip && motionButton) {
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var isPaused = false;
+
+    function updateIdentityMotion() {
+      identityStrip.dataset.animated = String(!reducedMotion.matches);
+      identityStrip.dataset.paused = String(isPaused);
+      motionButton.hidden = reducedMotion.matches;
+      motionButton.setAttribute("aria-pressed", String(isPaused));
+    }
+
+    motionButton.addEventListener("click", function () {
+      isPaused = !isPaused;
+      updateIdentityMotion();
+    });
+
+    reducedMotion.addEventListener("change", updateIdentityMotion);
+    updateIdentityMotion();
   }
 
   // Contact form: open the visitor's email client with a prefilled message
