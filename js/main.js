@@ -1,4 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // A single entrance, never replayed by scrolling or changing preferences.
+  var hero = document.querySelector(".hero");
+  var introMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (hero && !introMotion.matches) {
+    function finishHeroIntro() {
+      hero.removeEventListener("animationend", onHeroIntroEnd);
+      hero.removeEventListener("animationcancel", onHeroIntroEnd);
+      introMotion.removeEventListener("change", onIntroPreferenceChange);
+      delete hero.dataset.introReady;
+    }
+
+    function onHeroIntroEnd(event) {
+      if (event.animationName !== "hero-title-enter") return;
+      if (event.type === "animationcancel" || event.target.classList.contains("hero-title-accent")) finishHeroIntro();
+    }
+
+    function onIntroPreferenceChange(event) {
+      if (event.matches) finishHeroIntro();
+    }
+
+    hero.addEventListener("animationend", onHeroIntroEnd);
+    hero.addEventListener("animationcancel", onHeroIntroEnd);
+    introMotion.addEventListener("change", onIntroPreferenceChange);
+    hero.dataset.introReady = "true";
+  }
+
   // Mobile menu toggle
   var menuButton = document.getElementById("menu-toggle");
   var mobileNav = document.getElementById("mobile-nav");
@@ -8,8 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       mobileNav.classList.toggle("is-open", isOpen);
       mobileNav.setAttribute("aria-hidden", String(!isOpen));
       menuButton.setAttribute("aria-expanded", String(isOpen));
-      menuButton.querySelector(".material-symbols-outlined").textContent =
-        isOpen ? "close" : "menu";
+      menuButton.querySelector("use").setAttribute("href", isOpen ? "images/icons.svg#close" : "images/icons.svg#menu");
     }
 
     menuButton.addEventListener("click", function () {
@@ -40,53 +66,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Motion stays static without JavaScript and respects live OS preference changes.
   var identityStrip = document.querySelector(".identity-strip");
-  var motionButton = document.querySelector(".identity-toggle");
+  var motionControl = document.querySelector(".identity-window");
 
-  if (identityStrip && motionButton) {
+  if (identityStrip && motionControl) {
     var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     var isPaused = false;
 
     function updateIdentityMotion() {
       identityStrip.dataset.animated = String(!reducedMotion.matches);
       identityStrip.dataset.paused = String(isPaused);
-      motionButton.hidden = reducedMotion.matches;
-      motionButton.setAttribute("aria-pressed", String(isPaused));
+      motionControl.dataset.motionControl = String(!reducedMotion.matches);
+      if (reducedMotion.matches) {
+        ["role", "tabindex", "aria-label", "aria-pressed", "aria-describedby"].forEach(function (attribute) {
+          motionControl.removeAttribute(attribute);
+        });
+      } else {
+        motionControl.setAttribute("role", "button");
+        motionControl.tabIndex = 0;
+        motionControl.setAttribute("aria-label", "Pause scrolling text");
+        motionControl.setAttribute("aria-pressed", String(isPaused));
+        motionControl.setAttribute("aria-describedby", "identity-help");
+      }
     }
 
-    motionButton.addEventListener("click", function () {
+    function toggleIdentityMotion() {
+      if (reducedMotion.matches) return;
       isPaused = !isPaused;
       updateIdentityMotion();
+    }
+
+    motionControl.addEventListener("click", toggleIdentityMotion);
+    motionControl.addEventListener("keydown", function (event) {
+      if (!reducedMotion.matches && (event.key === " " || event.key === "Enter")) {
+        event.preventDefault();
+        toggleIdentityMotion();
+      }
     });
 
     reducedMotion.addEventListener("change", updateIdentityMotion);
     updateIdentityMotion();
   }
 
-  // Contact form: open the visitor's email client with a prefilled message
-  var contactForm = document.getElementById("contact-form");
-  var contactSuccess = document.getElementById("contact-success");
-
-  if (contactForm && contactSuccess) {
-    contactForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      var name = contactForm.elements["name"].value;
-      var email = contactForm.elements["email"].value;
-      var message = contactForm.elements["message"].value;
-
-      var subject = "Portfolio contact from " + name;
-      var body =
-        message + "\n\n---\nFrom: " + name + " (" + email + ")";
-      var mailtoLink =
-        "mailto:muhammedrinshidvpr@gmail.com" +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-
-      window.location.href = mailtoLink;
-
-      contactForm.reset();
-      contactForm.classList.add("hidden");
-      contactSuccess.classList.add("is-visible");
-    });
-  }
 });

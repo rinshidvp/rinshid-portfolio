@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var activeIndex = 0;
   var gesture = null;
+  var suppressCardClick = false;
 
   function resetDrag() {
     stage.dataset.dragging = "false";
@@ -43,16 +44,22 @@ document.addEventListener("DOMContentLoaded", function () {
     status.textContent = (activeIndex + 1) + " / " + slides.length + " — " + title;
   }
 
-  carousel.querySelectorAll("[data-project-step]").forEach(function (button) {
-    button.addEventListener("click", function () {
-      selectProject(activeIndex + Number(button.dataset.projectStep));
-    });
-  });
-
   dots.forEach(function (dot) {
     dot.addEventListener("click", function () {
       selectProject(Number(dot.dataset.projectTo));
     });
+  });
+
+  carousel.querySelectorAll(".project-card-next").forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      if (event.detail > 0 && suppressCardClick) {
+        suppressCardClick = false;
+        return;
+      }
+      suppressCardClick = false;
+      selectProject(activeIndex + 1);
+    });
+    button.hidden = false;
   });
 
   carousel.addEventListener("keydown", function (event) {
@@ -69,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   stage.addEventListener("pointerdown", function (event) {
     if (!event.isPrimary || event.button !== 0 || !event.target.closest(".project-face")) return;
+    suppressCardClick = false;
     gesture = { id: event.pointerId, x: event.clientX, y: event.clientY, delta: 0, horizontal: false };
   });
 
@@ -77,12 +85,14 @@ document.addEventListener("DOMContentLoaded", function () {
     var deltaX = event.clientX - gesture.x;
     var deltaY = event.clientY - gesture.y;
     if (!gesture.horizontal) {
+      if (Math.abs(deltaX) > 8 || Math.abs(deltaY) > 8) suppressCardClick = true;
       if (Math.abs(deltaY) > 10 && Math.abs(deltaY) > Math.abs(deltaX)) {
-        resetDrag();
+        gesture.delta = deltaX;
         return;
       }
       if (Math.abs(deltaX) < 10 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) return;
       gesture.horizontal = true;
+      suppressCardClick = true;
       stage.setPointerCapture(event.pointerId);
       stage.dataset.dragging = "true";
     }
@@ -120,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
   carousel.setAttribute("aria-roledescription", "carousel");
   carousel.dataset.ready = "true";
   navigation.hidden = false;
-  carousel.querySelector(".project-gesture-hint").hidden = false;
   selectProject(0);
   selectFromHash();
   window.addEventListener("hashchange", selectFromHash);

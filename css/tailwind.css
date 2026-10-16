@@ -1,0 +1,4 @@
+/* Rebuild css/utilities.css with the pinned CLI command in README.md. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

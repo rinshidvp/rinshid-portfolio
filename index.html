@@ -56,150 +56,12 @@
         ]
       }
     </script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="css/utilities.css?v=20261016-6" />
     <link
       href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
       rel="stylesheet"
     />
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "secondary-fixed-dim": "#c6c6c7",
-              "on-surface-variant": "#e2bfb0",
-              "inverse-surface": "#e5e2e1",
-              "secondary-fixed": "#e2e2e2",
-              "on-error": "#690005",
-              "on-secondary": "#2f3131",
-              "inverse-primary": "#a04100",
-              "on-secondary-fixed-variant": "#454747",
-              "on-primary-fixed-variant": "#7a3000",
-              "primary-fixed": "#ffdbcc",
-              "on-secondary-container": "#b4b5b5",
-              primary: "#ffb693",
-              "surface-container-lowest": "#0e0e0e",
-              surface: "#131313",
-              "outline-variant": "#5a4136",
-              "primary-fixed-dim": "#ffb693",
-              "inverse-on-surface": "#313030",
-              "tertiary-fixed-dim": "#c7c6c6",
-              "surface-dim": "#131313",
-              "surface-container-low": "#1c1b1b",
-              "on-background": "#e5e2e1",
-              tertiary: "#c7c6c6",
-              "on-primary-fixed": "#351000",
-              secondary: "#c6c6c7",
-              "tertiary-fixed": "#e3e2e2",
-              "on-tertiary-fixed": "#1b1c1c",
-              "surface-container": "#201f1f",
-              "on-secondary-fixed": "#1a1c1c",
-              "surface-container-high": "#2a2a2a",
-              outline: "#a98a7d",
-              error: "#ffb4ab",
-              "surface-tint": "#ffb693",
-              "on-error-container": "#ffdad6",
-              "on-surface": "#e5e2e1",
-              "on-primary-container": "#572000",
-              "error-container": "#93000a",
-              "secondary-container": "#454747",
-              "on-tertiary-container": "#303131",
-              "on-tertiary": "#303031",
-              "tertiary-container": "#999999",
-              "surface-container-highest": "#353534",
-              "primary-container": "#ff6b00",
-              "surface-variant": "#353534",
-              "on-tertiary-fixed-variant": "#464747",
-              "on-primary": "#561f00",
-              "surface-bright": "#3a3939",
-              background: "#131313",
-            },
-            borderRadius: {
-              DEFAULT: "0.125rem",
-              lg: "0.25rem",
-              xl: "0.5rem",
-              full: "0.75rem",
-            },
-            spacing: {
-              "section-gap-mobile": "56px",
-              base: "8px",
-              "container-max": "1280px",
-              gutter: "24px",
-              "section-gap-desktop": "88px",
-            },
-            fontFamily: {
-              "display-lg": ["Syne"],
-              "body-lg": ["Hanken Grotesk"],
-              "headline-md": ["Syne"],
-              "display-lg-mobile": ["Syne"],
-              "headline-xl": ["Syne"],
-              "label-caps": ["JetBrains Mono"],
-              "body-md": ["Hanken Grotesk"],
-            },
-            fontSize: {
-              "display-lg": [
-                "76px",
-                {
-                  lineHeight: "1.08",
-                  letterSpacing: "-0.02em",
-                  fontWeight: "800",
-                },
-              ],
-              "body-lg": [
-                "18px",
-                {
-                  lineHeight: "1.6",
-                  fontWeight: "400",
-                },
-              ],
-              "headline-md": [
-                "32px",
-                {
-                  lineHeight: "1.25",
-                  fontWeight: "700",
-                },
-              ],
-              "display-lg-mobile": [
-                "36px",
-                {
-                  lineHeight: "1.18",
-                  letterSpacing: "-0.01em",
-                  fontWeight: "800",
-                },
-              ],
-              "headline-xl": [
-                "36px",
-                {
-                  lineHeight: "1.22",
-                  fontWeight: "700",
-                },
-              ],
-              "label-caps": [
-                "12px",
-                {
-                  lineHeight: "1.0",
-                  letterSpacing: "0.1em",
-                  fontWeight: "500",
-                },
-              ],
-              "body-md": [
-                "16px",
-                {
-                  lineHeight: "1.6",
-                  fontWeight: "400",
-                },
-              ],
-            },
-          },
-        },
-      };
-    </script>
-    <link rel="stylesheet" href="css/style.css?v=20261016-4" />
+    <link rel="stylesheet" href="css/style.css?v=20261016-6" />
   </head>
   <body
     class="bg-surface-container-lowest font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-surface-container-lowest"
@@ -239,7 +101,7 @@
           aria-label="Toggle navigation"
           class="lg:hidden text-on-surface -mr-2 p-2"
         >
-          <span class="material-symbols-outlined text-3xl">menu</span>
+          <svg class="icon text-3xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#menu"/></svg>
         </button>
       </div>
       <div
@@ -275,7 +137,8 @@
               </div>
             </div>
             <h1 id="hero-title" class="hero-title">
-              Software that makes <span>work easier.</span>
+              <span class="hero-title-line">Software that makes</span>
+              <span class="hero-title-line hero-title-accent">work easier.</span>
             </h1>
             <p class="hero-description">
               I’m Rinshid, a developer from Kerala building web apps,
@@ -305,11 +168,11 @@
       <aside class="identity-strip max-w-container-max mx-auto px-gutter" aria-label="Design, code, and automation" data-paused="false">
         <div class="identity-toolbar">
           <p>ALWAYS BUILDING</p>
-          <button type="button" class="identity-toggle" aria-pressed="false" aria-controls="identity-track" hidden>Pause motion</button>
         </div>
         <p class="sr-only">Muhammed Rinshid V P — design, code, and automation.</p>
-        <div class="identity-window" aria-hidden="true">
-          <div class="identity-viewport">
+        <p id="identity-help" hidden>Click or tap this strip, or press Space or Enter, to pause or resume the scrolling text.</p>
+        <div class="identity-window">
+          <div class="identity-viewport" aria-hidden="true">
             <div class="identity-track" id="identity-track">
               <div class="identity-group"><span class="identity-name">MUHAMMED RINSHID V P</span><span class="identity-star">✳</span><span class="identity-craft">DESIGN. CODE. AUTOMATE.</span><span class="identity-star">✳</span></div>
               <div class="identity-group"><span class="identity-name">MUHAMMED RINSHID V P</span><span class="identity-star">✳</span><span class="identity-craft">DESIGN. CODE. AUTOMATE.</span><span class="identity-star">✳</span></div>
@@ -322,9 +185,7 @@
         class="scroll-mt-[84px] md:scroll-mt-[100px] max-w-container-max mx-auto px-gutter py-section-gap-mobile md:py-section-gap-desktop border-t border-white/10"
         id="projects"
       >
-        <p class="font-label-caps text-label-caps text-primary-container mb-3">
-          SELECTED WORK
-        </p>
+        <p class="section-kicker"><span class="section-index" aria-hidden="true">01</span> Selected Work</p>
         <h2 class="font-headline-xl text-headline-xl text-on-surface mb-4">
           Built to be useful.
         </h2>
@@ -333,19 +194,7 @@
           everyday problems. Here are three to start with.
         </p>
         <div class="project-carousel" role="region" aria-label="Featured projects">
-          <div class="project-navigation" hidden>
-            <p class="project-status" role="status" aria-live="polite" aria-atomic="true"></p>
-            <div class="project-controls">
-              <button type="button" class="project-arrow" data-project-step="-1" aria-label="Previous project" aria-controls="project-stage"><span aria-hidden="true">←</span></button>
-              <div class="project-dots" role="group" aria-label="Choose a project">
-                <button type="button" data-project-to="0" aria-label="Show BlinkBreak" aria-pressed="false" aria-controls="project-stage"><span></span></button>
-                <button type="button" data-project-to="1" aria-label="Show CosmIQ Sync" aria-pressed="false" aria-controls="project-stage"><span></span></button>
-                <button type="button" data-project-to="2" aria-label="Show CosmIQ KEAM Predictor" aria-pressed="false" aria-controls="project-stage"><span></span></button>
-              </div>
-              <button type="button" class="project-arrow" data-project-step="1" aria-label="Next project" aria-controls="project-stage"><span aria-hidden="true">→</span></button>
-            </div>
-          </div>
-          <p class="project-gesture-hint" hidden>Swipe or drag the cards · Use ← → when the gallery is focused</p>
+          <p class="project-status sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
           <div class="project-stage featured-projects" id="project-stage">
             <!-- The old #foss link still selects and reaches BlinkBreak. -->
             <article id="foss" class="project-slide project-slide-blinkbreak scroll-mt-[84px] md:scroll-mt-[100px]" aria-labelledby="blinkbreak-title">
@@ -359,6 +208,7 @@
                   <h3 id="blinkbreak-title">BlinkBreak</h3>
                   <span>OPEN SOURCE · MIT</span>
                 </div>
+                <button type="button" class="project-card-next" aria-label="Show next project after BlinkBreak" hidden></button>
               </div>
               <div class="project-info">
                 <p>Calm reminders to blink, look away, and move. Runs quietly on your desktop, with no accounts or tracking and light and dark themes. Available for Windows, macOS, and Linux.</p>
@@ -379,6 +229,7 @@
                   <h3 id="sync-title">CosmIQ Sync</h3>
                   <span>CODE BETWEEN DEVICES.</span>
                 </div>
+                <button type="button" class="project-card-next" aria-label="Show next project after CosmIQ Sync" hidden></button>
               </div>
               <div class="project-info">
                 <p>Move code snippets and screenshots between a shared lab computer and your own device using a 5-digit session key. No account needed, with real-time sync and scheduled expiry.</p>
@@ -399,6 +250,7 @@
                   <h3 id="keam-title">CosmIQ KEAM Predictor</h3>
                   <span>YOUR RANK. YOUR OPTIONS.</span>
                 </div>
+                <button type="button" class="project-card-next" aria-label="Show next project after CosmIQ KEAM Predictor" hidden></button>
               </div>
               <div class="project-info">
                 <p>Explore Kerala engineering colleges using your KEAM rank and category, with filters for college, branch, and allotment phase. Based on historical cutoffs, not a guarantee of admission.</p>
@@ -410,6 +262,13 @@
               </div>
             </article>
           </div>
+          <div class="project-navigation" hidden>
+            <div class="project-dots" role="group" aria-label="Choose a project">
+              <button type="button" data-project-to="0" aria-label="Show BlinkBreak" aria-pressed="false" aria-controls="project-stage"><span></span></button>
+              <button type="button" data-project-to="1" aria-label="Show CosmIQ Sync" aria-pressed="false" aria-controls="project-stage"><span></span></button>
+              <button type="button" data-project-to="2" aria-label="Show CosmIQ KEAM Predictor" aria-pressed="false" aria-controls="project-stage"><span></span></button>
+            </div>
+          </div>
         </div>
         <details class="project-archive">
           <summary>
@@ -420,7 +279,7 @@
           <!-- Priority project 4: CosmIQ OS. Its source repository is private. -->
           <article class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5" aria-labelledby="os-title">
             <div class="aspect-video bg-primary-container/10 flex flex-col items-center justify-center gap-3" aria-hidden="true">
-              <span class="material-symbols-outlined text-6xl text-primary-container">account_tree</span>
+              <svg class="icon text-6xl text-primary-container" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#account_tree"/></svg>
               <span class="font-label-caps text-label-caps text-on-surface-variant">ENQUIRY TO QUOTATION.</span>
             </div>
             <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
@@ -435,7 +294,7 @@
               </p>
               <div class="flex flex-wrap gap-4 mt-auto pt-4">
                 <a href="https://cosmiq-os.vercel.app/" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
-                  WEBSITE <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                  WEBSITE <svg class="icon text-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg>
                 </a>
               </div>
             </div>
@@ -443,7 +302,7 @@
           <!-- Priority project 5: AURA -->
           <article class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5" aria-labelledby="aura-title">
             <div class="aspect-video bg-primary-container/10 flex flex-col items-center justify-center gap-3" aria-hidden="true">
-              <span class="material-symbols-outlined text-6xl text-primary-container">account_balance</span>
+              <svg class="icon text-6xl text-primary-container" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#account_balance"/></svg>
               <span class="font-label-caps text-label-caps text-on-surface-variant">REPORT. TRACK. RESOLVE.</span>
             </div>
             <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
@@ -458,10 +317,10 @@
               </p>
               <div class="flex flex-wrap gap-4 mt-auto pt-4">
                 <a href="https://aura-campus-three.vercel.app/" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
-                  LIVE PORTAL <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                  LIVE PORTAL <svg class="icon text-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg>
                 </a>
                 <a href="https://github.com/rinshidvp/AURA" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
-                  GITHUB <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                  GITHUB <svg class="icon text-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg>
                 </a>
               </div>
             </div>
@@ -528,9 +387,7 @@
                   rel="noopener"
                   class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
                   >LIVE
-                  <span class="material-symbols-outlined text-sm"
-                    >arrow_outward</span
-                  ></a
+                  <svg class="icon text-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg></a
                 >
                 <a
                   href="https://github.com/rinshidvp/campus-trade-v2"
@@ -538,9 +395,7 @@
                   rel="noopener"
                   class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
                   >GITHUB
-                  <span class="material-symbols-outlined text-sm"
-                    >arrow_outward</span
-                  ></a
+                  <svg class="icon text-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg></a
                 >
               </div>
             </div>
@@ -568,10 +423,10 @@
               </p>
               <div class="flex flex-wrap gap-4 mt-auto pt-4">
                 <a href="https://rentvibe.vercel.app/" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
-                  LIVE <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                  LIVE <svg class="icon text-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg>
                 </a>
                 <a href="https://github.com/rinshidvp/rentvibe-landing" target="_blank" rel="noopener" class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors">
-                  GITHUB <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span>
+                  GITHUB <svg class="icon text-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg>
                 </a>
               </div>
             </div>
@@ -642,9 +497,7 @@
                   rel="noopener"
                   class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
                   >GITHUB
-                  <span class="material-symbols-outlined text-sm"
-                    >arrow_outward</span
-                  ></a
+                  <svg class="icon text-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg></a
                 >
               </div>
             </div>
@@ -710,9 +563,7 @@
                   rel="noopener"
                   class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
                   >GITHUB
-                  <span class="material-symbols-outlined text-sm"
-                    >arrow_outward</span
-                  ></a
+                  <svg class="icon text-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg></a
                 >
               </div>
             </div>
@@ -782,7 +633,7 @@
             class="hover-lift group flex flex-col bg-surface rounded-lg overflow-hidden border border-white/5"
           >
             <div class="aspect-video bg-primary-container/10 flex flex-col items-center justify-center gap-3" aria-hidden="true">
-              <span class="material-symbols-outlined text-6xl text-primary-container">menu_book</span>
+              <svg class="icon text-6xl text-primary-container" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#menu_book"/></svg>
               <span class="font-label-caps text-label-caps text-on-surface-variant">LEARN. BUILD. SHARE.</span>
             </div>
             <div class="p-6 md:p-8 flex flex-col gap-2 flex-1">
@@ -801,7 +652,7 @@
                   rel="noopener"
                   class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
                   >OPEN NOTEBOOK
-                  <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span></a
+                  <svg class="icon text-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg></a
                 >
                 <a
                   href="https://github.com/rinshidvp/rinshid-note"
@@ -809,7 +660,7 @@
                   rel="noopener"
                   class="font-label-caps text-label-caps text-on-surface inline-flex items-center gap-1 hover:text-primary-container transition-colors"
                   >GITHUB
-                  <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_outward</span></a
+                  <svg class="icon text-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg></a
                 >
               </div>
             </div>
@@ -821,7 +672,7 @@
       <section id="about" class="scroll-mt-[84px] md:scroll-mt-[100px] max-w-container-max mx-auto px-gutter py-section-gap-mobile md:py-section-gap-desktop border-t border-white/10">
         <div class="about-layout">
           <div>
-            <p class="font-label-caps text-label-caps text-primary-container mb-3">ABOUT</p>
+            <p class="section-kicker"><span class="section-index" aria-hidden="true">02</span> About</p>
             <h2 class="font-headline-xl text-headline-xl text-on-surface mb-6">Less prototype.<br />More production.</h2>
             <p class="text-body-lg text-on-surface-variant mb-5">I’m a second-year B.Tech CS student, AI automation engineer, and founder based in Kerala, India, working remote.</p>
             <p class="text-body-md text-on-surface-variant mb-6">I founded CosmIQ to bring AI automation and full-stack software to businesses across India and the UK, and I currently engineer production automation infrastructure on AWS for an international client. Outside client work, I've trained 100+ students in practical AI literacy — I like building systems about as much as I like teaching people to use them.</p>
@@ -853,6 +704,7 @@
         class="scroll-mt-[84px] md:scroll-mt-[100px] max-w-container-max mx-auto px-gutter py-section-gap-mobile md:py-section-gap-desktop border-t border-white/10"
         id="experience"
       >
+        <p class="section-kicker"><span class="section-index" aria-hidden="true">03</span> Services &amp; Experience</p>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <!-- What I Do -->
           <div>
@@ -868,10 +720,7 @@
                   <span
                     class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
                   >
-                    <span
-                      class="material-symbols-outlined text-primary-container text-xl" aria-hidden="true"
-                      >bolt</span
-                    >
+                    <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#bolt"/></svg>
                   </span>
                   <h4
                     class="font-headline-md text-lg md:text-headline-md text-on-surface group-hover:text-primary-container transition-colors"
@@ -885,10 +734,7 @@
                     AWS-deployed automation pipelines for business
                     operations.
                   </p>
-                  <span
-                    class="material-symbols-outlined group-hover:text-primary-container transition-colors" aria-hidden="true"
-                    >arrow_outward</span
-                  >
+                  <svg class="icon group-hover:text-primary-container transition-colors" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg>
                 </div>
               </a>
               <a
@@ -899,10 +745,7 @@
                   <span
                     class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
                   >
-                    <span
-                      class="material-symbols-outlined text-primary-container text-xl" aria-hidden="true"
-                      >code</span
-                    >
+                    <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#code"/></svg>
                   </span>
                   <h4
                     class="font-headline-md text-lg md:text-headline-md text-on-surface group-hover:text-primary-container transition-colors"
@@ -915,10 +758,7 @@
                     Production web apps end-to-end with Next.js, React,
                     Supabase, and PostgreSQL.
                   </p>
-                  <span
-                    class="material-symbols-outlined group-hover:text-primary-container transition-colors" aria-hidden="true"
-                    >arrow_outward</span
-                  >
+                  <svg class="icon group-hover:text-primary-container transition-colors" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg>
                 </div>
               </a>
               <a
@@ -929,10 +769,7 @@
                   <span
                     class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
                   >
-                    <span
-                      class="material-symbols-outlined text-primary-container text-xl" aria-hidden="true"
-                      >school</span
-                    >
+                    <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#school"/></svg>
                   </span>
                   <h4
                     class="font-headline-md text-lg md:text-headline-md text-on-surface group-hover:text-primary-container transition-colors"
@@ -945,10 +782,7 @@
                     Advising businesses on AI adoption and training teams and
                     students in practical AI literacy.
                   </p>
-                  <span
-                    class="material-symbols-outlined group-hover:text-primary-container transition-colors" aria-hidden="true"
-                    >arrow_outward</span
-                  >
+                  <svg class="icon group-hover:text-primary-container transition-colors" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#arrow_outward"/></svg>
                 </div>
               </a>
             </div>
@@ -966,10 +800,7 @@
                   <span
                     class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
                   >
-                    <span
-                      class="material-symbols-outlined text-primary-container text-xl"
-                      >smart_toy</span
-                    >
+                    <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#smart_toy"/></svg>
                   </span>
                   <h4 class="font-headline-md text-lg md:text-headline-md text-on-surface">
                     Azmora
@@ -992,10 +823,7 @@
                   <span
                     class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
                   >
-                    <span
-                      class="material-symbols-outlined text-primary-container text-xl"
-                      >rocket_launch</span
-                    >
+                    <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#rocket_launch"/></svg>
                   </span>
                   <h4 class="font-headline-md text-lg md:text-headline-md text-on-surface">
                     CosmIQ
@@ -1016,7 +844,7 @@
               >
                 <div class="flex items-center gap-4">
                   <span class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0">
-                    <span class="material-symbols-outlined text-primary-container text-xl" aria-hidden="true">groups</span>
+                    <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#groups"/></svg>
                   </span>
                   <h4 class="font-headline-md text-lg md:text-headline-md text-on-surface">FOSS</h4>
                 </div>
@@ -1033,9 +861,7 @@
         class="scroll-mt-[84px] md:scroll-mt-[100px] max-w-container-max mx-auto px-gutter py-section-gap-mobile md:py-section-gap-desktop border-t border-white/10"
         id="skills"
       >
-        <p class="font-label-caps text-label-caps text-primary-container mb-3">
-          SKILLS
-        </p>
+        <p class="section-kicker"><span class="section-index" aria-hidden="true">04</span> Skills</p>
         <h2 class="font-headline-xl text-headline-xl text-on-surface mb-12">
           The stack I build with
         </h2>
@@ -1053,10 +879,7 @@
               <span
                 class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
               >
-                <span
-                  class="material-symbols-outlined text-primary-container text-xl"
-                  >auto_awesome</span
-                >
+                <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#auto_awesome"/></svg>
               </span>
               <h3
                 class="font-label-caps text-label-caps text-on-surface tracking-widest"
@@ -1104,10 +927,7 @@
               <span
                 class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
               >
-                <span
-                  class="material-symbols-outlined text-primary-container text-xl"
-                  >code</span
-                >
+                <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#code"/></svg>
               </span>
               <h3
                 class="font-label-caps text-label-caps text-on-surface tracking-widest"
@@ -1159,10 +979,7 @@
               <span
                 class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
               >
-                <span
-                  class="material-symbols-outlined text-primary-container text-xl"
-                  >dns</span
-                >
+                <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#dns"/></svg>
               </span>
               <h3
                 class="font-label-caps text-label-caps text-on-surface tracking-widest"
@@ -1202,10 +1019,7 @@
               <span
                 class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
               >
-                <span
-                  class="material-symbols-outlined text-primary-container text-xl"
-                  >database</span
-                >
+                <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#database"/></svg>
               </span>
               <h3
                 class="font-label-caps text-label-caps text-on-surface tracking-widest"
@@ -1241,10 +1055,7 @@
               <span
                 class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
               >
-                <span
-                  class="material-symbols-outlined text-primary-container text-xl"
-                  >cloud</span
-                >
+                <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#cloud"/></svg>
               </span>
               <h3
                 class="font-label-caps text-label-caps text-on-surface tracking-widest"
@@ -1284,10 +1095,7 @@
               <span
                 class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
               >
-                <span
-                  class="material-symbols-outlined text-primary-container text-xl"
-                  >construction</span
-                >
+                <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#construction"/></svg>
               </span>
               <h3
                 class="font-label-caps text-label-caps text-on-surface tracking-widest"
@@ -1325,6 +1133,7 @@
         class="scroll-mt-[84px] md:scroll-mt-[100px] max-w-container-max mx-auto px-gutter py-section-gap-mobile md:py-section-gap-desktop border-t border-white/10"
         id="education"
       >
+        <p class="section-kicker"><span class="section-index" aria-hidden="true">05</span> Education &amp; Learning</p>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           <!-- Education -->
           <div>
@@ -1339,10 +1148,7 @@
                   <span
                     class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
                   >
-                    <span
-                      class="material-symbols-outlined text-primary-container text-xl"
-                      >school</span
-                    >
+                    <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#school"/></svg>
                   </span>
                   <h4 class="font-headline-md text-lg md:text-headline-md text-on-surface">
                     TKM College of Engineering
@@ -1365,10 +1171,7 @@
                   <span
                     class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 flex-shrink-0"
                   >
-                    <span
-                      class="material-symbols-outlined text-primary-container text-xl"
-                      >history_edu</span
-                    >
+                    <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#history_edu"/></svg>
                   </span>
                   <h4 class="font-headline-md text-lg md:text-headline-md text-on-surface">
                     Markaz CHSS
@@ -1394,10 +1197,7 @@
                 <span
                   class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 mb-3"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-xl"
-                    >workspace_premium</span
-                  >
+                  <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#workspace_premium"/></svg>
                 </span>
                 <h4 class="font-headline-md text-base text-on-surface leading-tight mb-1">
                   AI &amp; Prompt Engineering
@@ -1410,10 +1210,7 @@
                 <span
                   class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 mb-3"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-xl"
-                    >psychology</span
-                  >
+                  <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#psychology"/></svg>
                 </span>
                 <h4 class="font-headline-md text-base text-on-surface leading-tight mb-1">
                   Claude 101
@@ -1426,10 +1223,7 @@
                 <span
                   class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 mb-3"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-xl"
-                    >auto_stories</span
-                  >
+                  <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#auto_stories"/></svg>
                 </span>
                 <h4 class="font-headline-md text-base text-on-surface leading-tight mb-1">
                   Classroom of Tomorrow Using AI
@@ -1442,10 +1236,7 @@
                 <span
                   class="flex items-center justify-center w-10 h-10 rounded bg-primary-container/10 mb-3"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-xl"
-                    >military_tech</span
-                  >
+                  <svg class="icon text-primary-container text-xl" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#military_tech"/></svg>
                 </span>
                 <h4 class="font-headline-md text-base text-on-surface leading-tight mb-1">
                   Intel AI Aware Badge
@@ -1461,202 +1252,67 @@
         class="scroll-mt-[84px] md:scroll-mt-[100px] max-w-container-max mx-auto px-gutter py-section-gap-mobile md:py-section-gap-desktop border-t border-white/10"
         id="contact"
       >
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="contact-layout">
           <div>
-            <p class="font-label-caps text-label-caps text-primary-container mb-3">
-              CONTACT
-            </p>
+            <p class="section-kicker"><span class="section-index" aria-hidden="true">06</span> Contact</p>
             <h2 class="font-headline-xl text-headline-xl text-on-surface mb-6">
-              Let's work together
+              Let’s build something useful.
             </h2>
             <p
               class="font-body-lg text-body-lg text-on-surface-variant mb-4 max-w-md"
             >
-              Have a project in mind or just want to say hello? Fill out the
-              form, or reach me directly below.
+              Have a project in mind? Tell me what you’re building.
+              Let’s talk about your website, app, or automation.
             </p>
             <div
-              class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-surface px-4 py-2 mb-8"
+              class="contact-availability"
             >
               <span
-                class="w-2 h-2 rounded-full bg-primary-container animate-pulse flex-shrink-0"
+                class="w-2 h-2 bg-primary-container flex-shrink-0"
               ></span>
               <span class="font-label-caps text-label-caps text-on-surface-variant"
                 >Available for freelance projects</span
               >
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="contact-links">
               <a
                 href="mailto:muhammedrinshidvpr@gmail.com"
-                class="hover-lift flex items-center gap-3 bg-surface rounded-lg border border-white/5 p-4 min-h-[64px]"
+                class="button-primary"
               >
-                <span
-                  class="flex items-center justify-center w-11 h-11 rounded bg-primary-container/10 flex-shrink-0"
-                >
-                  <span class="material-symbols-outlined text-primary-container"
-                    >mail</span
-                  >
-                </span>
-                <div class="min-w-0">
-                  <p class="font-label-caps text-label-caps text-on-surface-variant opacity-70">
-                    EMAIL
-                  </p>
-                  <p class="text-sm text-on-surface truncate">
-                    muhammedrinshidvpr@gmail.com
-                  </p>
-                </div>
+                Email me <span aria-hidden="true">↗</span>
               </a>
               <a
                 href="https://wa.me/917594827429"
                 target="_blank"
                 rel="noopener"
-                class="hover-lift flex items-center gap-3 bg-surface rounded-lg border border-white/5 p-4 min-h-[64px]"
+                class="button-secondary"
               >
-                <span
-                  class="flex items-center justify-center w-11 h-11 rounded bg-primary-container/10 flex-shrink-0"
-                >
-                  <span class="material-symbols-outlined text-primary-container"
-                    >chat</span
-                  >
-                </span>
-                <div class="min-w-0">
-                  <p class="font-label-caps text-label-caps text-on-surface-variant opacity-70">
-                    WHATSAPP
-                  </p>
-                  <p class="text-sm text-on-surface truncate">
-                    +91 75948 27429
-                  </p>
-                </div>
+                WhatsApp <span aria-hidden="true">↗</span>
               </a>
               <a
                 href="https://linkedin.com/in/rinshidrazaq"
                 target="_blank"
                 rel="noopener"
-                class="hover-lift flex items-center gap-3 bg-surface rounded-lg border border-white/5 p-4 min-h-[64px]"
+                class="contact-social"
               >
-                <span
-                  class="flex items-center justify-center w-11 h-11 rounded bg-primary-container/10 flex-shrink-0"
-                >
-                  <span class="material-symbols-outlined text-primary-container"
-                    >work</span
-                  >
-                </span>
-                <div class="min-w-0">
-                  <p class="font-label-caps text-label-caps text-on-surface-variant opacity-70">
-                    LINKEDIN
-                  </p>
-                  <p class="text-sm text-on-surface truncate">
-                    /in/rinshidrazaq
-                  </p>
-                </div>
+                LinkedIn <span aria-hidden="true">↗</span>
               </a>
               <a
                 href="https://github.com/rinshidvp"
                 target="_blank"
                 rel="noopener"
-                class="hover-lift flex items-center gap-3 bg-surface rounded-lg border border-white/5 p-4 min-h-[64px]"
+                class="contact-social"
               >
-                <span
-                  class="flex items-center justify-center w-11 h-11 rounded bg-primary-container/10 flex-shrink-0"
-                >
-                  <span class="material-symbols-outlined text-primary-container"
-                    >code</span
-                  >
-                </span>
-                <div class="min-w-0">
-                  <p class="font-label-caps text-label-caps text-on-surface-variant opacity-70">
-                    GITHUB
-                  </p>
-                  <p class="text-sm text-on-surface truncate">
-                    rinshidvp
-                  </p>
-                </div>
+                GitHub <span aria-hidden="true">↗</span>
               </a>
             </div>
             <p class="font-label-caps text-label-caps text-on-surface-variant opacity-60 mt-6">
               KERALA, INDIA · REMOTE
             </p>
-            <p class="text-sm text-on-surface-variant mt-2 flex items-center gap-2">
-              <span class="material-symbols-outlined text-base text-primary-container"
-                >schedule</span
-              >
+            <p class="contact-reply text-sm text-on-surface-variant mt-2 flex items-center gap-2">
+              <svg class="icon text-base text-primary-container" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="images/icons.svg#schedule"/></svg>
               Usually replies within 24–48 hours.
             </p>
-          </div>
-          <div>
-            <form
-              id="contact-form"
-              class="flex flex-col gap-6"
-              aria-describedby="contact-help"
-            >
-              <p id="contact-help" class="sr-only">
-                Required fields: name, email, and message. Submitting will
-                open your email client with a prefilled message.
-              </p>
-              <div class="flex flex-col gap-2">
-                <label
-                  for="name"
-                  class="font-label-caps text-label-caps text-on-surface-variant"
-                  >NAME</label
-                >
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  class="bg-surface border border-white/10 rounded px-4 py-4 text-on-surface focus:border-primary-container focus:ring-primary-container focus:outline-none focus:ring-2 min-h-[52px]"
-                />
-              </div>
-              <div class="flex flex-col gap-2">
-                <label
-                  for="email"
-                  class="font-label-caps text-label-caps text-on-surface-variant"
-                  >EMAIL</label
-                >
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  class="bg-surface border border-white/10 rounded px-4 py-4 text-on-surface focus:border-primary-container focus:ring-primary-container focus:outline-none focus:ring-2 min-h-[52px]"
-                />
-              </div>
-              <div class="flex flex-col gap-2">
-                <label
-                  for="message"
-                  class="font-label-caps text-label-caps text-on-surface-variant"
-                  >MESSAGE</label
-                >
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  required
-                  class="bg-surface border border-white/10 rounded px-4 py-4 text-on-surface focus:border-primary-container focus:ring-primary-container focus:outline-none focus:ring-2"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                class="inline-flex items-center justify-center w-full bg-primary-container text-surface-container-lowest font-label-caps text-label-caps px-8 py-4 rounded hover:scale-[0.98] transition-transform duration-300 min-h-[52px]"
-              >
-                Send Message
-              </button>
-            </form>
-            <div
-              id="contact-success"
-              class="bg-surface border border-primary-container rounded-lg p-6"
-              role="status"
-              aria-live="polite"
-            >
-              <p class="font-headline-md text-headline-md text-on-surface mb-2">
-                Thanks for reaching out!
-              </p>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                Your email client should now be open with your message ready
-                to send. If it didn't open, email me directly at
-                muhammedrinshidvpr@gmail.com.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -1718,7 +1374,7 @@
         </div>
       </div>
     </footer>
-    <script src="js/project-carousel.js?v=20261016-4"></script>
-    <script src="js/main.js?v=20261016-4"></script>
+    <script src="js/project-carousel.js?v=20261016-6"></script>
+    <script src="js/main.js?v=20261016-6"></script>
   </body>
 </html>

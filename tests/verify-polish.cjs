@@ -52,15 +52,18 @@ async function verifyPage(page, origin = 'http://127.0.0.1:4175/') {
   }
   assert.equal(await page.locator('#about a[href="Rinshid_CV.html"]').count(), 1);
   assert.equal((await page.request.get(new URL('Rinshid_CV.html', origin).href)).status(), 200);
-  assert.equal(await page.locator('#contact-form [required]').count(), 3);
-  assert.equal(await page.locator('#contact-form button[type="submit"]').isVisible(), true);
+  assert.equal(await page.locator('#contact form, #contact-success').count(), 0);
+  assert.deepEqual(await page.locator('.contact-links a').evaluateAll(links => links.map(link => link.getAttribute('href'))), [
+    'mailto:muhammedrinshidvpr@gmail.com', 'https://wa.me/917594827429',
+    'https://linkedin.com/in/rinshidrazaq', 'https://github.com/rinshidvp',
+  ]);
   assert.equal(await page.locator('.service-link[href="#contact"]').count(), 3);
   assert.equal(await page.getByText('PROOF OF WORK', { exact: true }).count(), 0);
   assert.equal(await page.getByRole('heading', { name: 'Open on GitHub', exact: true }).count(), 0);
   assert.equal(await page.locator('#education').getByRole('heading', { name: 'Certifications', exact: true }).count(), 1);
   assert.equal(await page.locator('footer a[href="https://github.com/rinshidvp"]').count(), 1);
 
-  for (const width of [360, 390, 768, 1024, 1440]) {
+  for (const width of [320, 360, 390, 430, 768, 1024, 1440]) {
     await settleResize(page, width);
     await page.evaluate(() => scrollTo(0, 0));
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `No horizontal overflow at ${width}px`);
@@ -108,13 +111,13 @@ async function verifyPage(page, origin = 'http://127.0.0.1:4175/') {
     return summary.top >= header.bottom && summary.bottom < innerHeight;
   });
 
-  await page.locator('.project-slide[data-position="active"] a').last().focus();
+  await page.locator('.project-dots button').last().focus();
   await page.keyboard.press('Tab');
   assert.equal(await archiveSummary.evaluate(element => element === document.activeElement), true);
   assert.notEqual(await archiveSummary.evaluate(element => getComputedStyle(element).outlineStyle), 'none');
   assert.equal(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior), 'auto');
   assert.deepEqual(errors, [], 'No runtime errors');
-  return 'PASS: compact responsive hero, selected-work order, loaded previews, keyboard archive, project links, résumé, contact fields, mobile menu, focus and reduced motion.';
+  return 'PASS: responsive hero, selected work, loaded previews, keyboard archive, preserved links, résumé, direct contact, mobile menu, focus and reduced motion.';
 }
 
 async function sampleMarqueeMovement(page) {
@@ -148,14 +151,15 @@ async function verifyArtworkAndMotion(page, origin = 'http://127.0.0.1:4175/') {
   });
 
   const strip = page.locator('.identity-strip');
-  const pause = page.getByRole('button', { name: 'Pause motion' });
+  const pause = page.getByRole('button', { name: 'Pause scrolling text' });
+  assert.equal(await page.locator('.identity-toggle').count(), 0, 'No separate visible pause button');
   await strip.scrollIntoViewIfNeeded();
   assert.equal(await pause.isVisible(), true);
   assert.ok(await sampleMarqueeMovement(page) < -0.5, 'Identity text visibly travels left');
   const groupWidths = await page.locator('.identity-group').evaluateAll(groups => groups.map(group => group.getBoundingClientRect().width));
   // Transformed rectangles can differ by a fraction of a device subpixel.
   assert.ok(Math.abs(groupWidths[0] - groupWidths[1]) < 0.01, 'Loop groups have equal widths');
-  assert.equal(await page.locator('.identity-window').getAttribute('aria-hidden'), 'true');
+  assert.equal(await page.locator('.identity-viewport').getAttribute('aria-hidden'), 'true');
 
   await pause.focus();
   await page.keyboard.press('Enter');
@@ -177,7 +181,7 @@ async function verifyArtworkAndMotion(page, origin = 'http://127.0.0.1:4175/') {
   assert.equal(await pause.getAttribute('aria-pressed'), 'false');
   assert.ok(await sampleMarqueeMovement(page) < -0.5, 'Toggle resumes movement');
 
-  for (const width of [360, 390, 768, 1024, 1440]) {
+  for (const width of [320, 360, 390, 430, 768, 1024, 1440]) {
     await settleResize(page, width);
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `Marquee does not cause page overflow at ${width}px`);
     const stripMetrics = await page.locator('.identity-strip').evaluate(strip => ({
@@ -203,7 +207,7 @@ async function verifyArtworkAndMotion(page, origin = 'http://127.0.0.1:4175/') {
   try {
     const fallback = await noScript.newPage();
     await fallback.goto(origin, { waitUntil: 'networkidle' });
-    assert.equal(await fallback.locator('.identity-toggle').isVisible(), false);
+    assert.equal(await fallback.locator('.identity-window').getAttribute('role'), null);
     assert.equal(await fallback.locator('.identity-track').evaluate(element => getComputedStyle(element).animationName), 'none');
     assert.equal(await fallback.locator('.identity-group').nth(1).isVisible(), false);
     const staticGroup = fallback.locator('.identity-group').first();
@@ -213,7 +217,7 @@ async function verifyArtworkAndMotion(page, origin = 'http://127.0.0.1:4175/') {
   } finally {
     await noScript.close();
   }
-  return 'PASS: KEAM illustration loads, identity strip moves/pauses/resumes, reduced-motion and no-JS fallbacks work, and all button corners are sharp at five widths.';
+  return 'PASS: KEAM illustration loads, text strip itself pauses/resumes, reduced-motion and no-JS fallbacks work, and all button corners are sharp at seven widths.';
 }
 
 module.exports = { verifyPage, verifyArtworkAndMotion };

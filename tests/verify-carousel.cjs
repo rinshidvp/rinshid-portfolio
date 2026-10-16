@@ -43,17 +43,30 @@ async function verify() {
     await page.waitForFunction(() => document.querySelector('.project-carousel').dataset.ready === 'true');
     await page.evaluate(() => document.fonts.ready);
     const carousel = page.getByRole('region', { name: 'Featured projects' });
-    const next = page.getByRole('button', { name: 'Next project' });
-    const previous = page.getByRole('button', { name: 'Previous project' });
+    assert.equal(await page.getByRole('button', { name: 'Next project', exact: true }).count(), 0);
+    assert.equal(await page.getByRole('button', { name: 'Previous project', exact: true }).count(), 0);
+    assert.equal(await page.locator('.project-gesture-hint').count(), 0);
+    assert.equal(await page.locator('.project-status').evaluate(element => getComputedStyle(element).position), 'absolute', 'Status is only for assistive technology');
 
     await expectActive(page, 'BlinkBreak');
-    await next.click();
+    await page.locator('.project-slide[data-position="active"] .project-card-next').click();
     await expectActive(page, 'CosmIQ Sync');
-    await previous.click();
-    await expectActive(page, 'BlinkBreak');
-    await previous.click();
+    await page.locator('.project-slide[data-position="active"] .project-card-next').click();
     await expectActive(page, 'CosmIQ KEAM Predictor');
-    await next.click();
+    await page.locator('.project-slide[data-position="active"] .project-card-next').click();
+    await expectActive(page, 'BlinkBreak');
+    await page.locator('.project-slide[data-position="active"] .project-card-next').focus();
+    await page.keyboard.press('Space');
+    await expectActive(page, 'CosmIQ Sync');
+    await page.getByRole('button', { name: 'Show BlinkBreak', exact: true }).click();
+    await page.getByRole('button', { name: 'Show CosmIQ Sync', exact: true }).click();
+    await expectActive(page, 'CosmIQ Sync');
+    await page.getByRole('button', { name: 'Show BlinkBreak', exact: true }).click();
+    await expectActive(page, 'BlinkBreak');
+    await carousel.focus();
+    await page.keyboard.press('ArrowLeft');
+    await expectActive(page, 'CosmIQ KEAM Predictor');
+    await page.keyboard.press('ArrowRight');
     await expectActive(page, 'BlinkBreak');
     await page.getByRole('button', { name: 'Show CosmIQ KEAM Predictor' }).click();
     await expectActive(page, 'CosmIQ KEAM Predictor');
@@ -105,7 +118,7 @@ async function verify() {
     await page.goto(new URL('#keam-title', origin).href);
     await expectActive(page, 'CosmIQ KEAM Predictor');
 
-    for (const width of [360, 390, 768, 1024, 1440]) {
+    for (const width of [320, 360, 390, 430, 768, 1024, 1440]) {
       await page.setViewportSize({ width, height: 1000 });
       await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
       for (const dot of await page.locator('[data-project-to]').all()) {
@@ -114,13 +127,20 @@ async function verify() {
         assert.ok(Math.abs(geometry.width - geometry.height) <= 1, `Square card at ${width}px`);
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `No deck overflow at ${width}px`);
       }
-      assert.ok(await page.locator('button, a, input, textarea, summary').evaluateAll(elements => elements.every(element => {
+      assert.ok(await page.locator('button, a, input, textarea, summary, [role="button"]').evaluateAll(elements => elements.every(element => {
         const style = getComputedStyle(element);
         return [style.borderTopLeftRadius, style.borderTopRightRadius, style.borderBottomLeftRadius, style.borderBottomRightRadius].every(radius => radius === '0px');
       })), `All interactive corners are sharp at ${width}px`);
       const skillCard = page.locator('#skills .hover-lift').first();
       assert.notEqual(await skillCard.evaluate(element => getComputedStyle(element).backgroundColor), 'rgba(0, 0, 0, 0)');
       assert.equal(await skillCard.locator('span[aria-hidden="true"]').first().isVisible(), true, 'Numbered skills cards are restored');
+      if (width >= 360 && width <= 430) {
+        assert.equal(await page.locator('#skills > .grid').evaluate(element => getComputedStyle(element).gridTemplateColumns.split(' ').length), 2, 'Phone skills grid uses two compact columns');
+      }
+      if (width <= 430) {
+        const actions = await page.locator('.hero-actions a').evaluateAll(elements => elements.map(element => element.getBoundingClientRect().toJSON()));
+        assert.ok(Math.abs(actions[0].width - actions[1].width) < 1 && actions[0].y === actions[1].y, 'Phone hero buttons are equal-width and aligned');
+      }
       if ([390, 1440].includes(width)) {
         await carousel.screenshot({ path: path.join(output, `project-stack-${width}.png`) });
       }
@@ -143,6 +163,7 @@ async function verify() {
       for (const article of await fallback.locator('.project-slide').all()) {
         assert.equal(await article.locator('.project-info').isVisible(), true);
         assert.equal(await article.evaluate(element => element.inert), false);
+        assert.equal(await article.locator('.project-card-next').isVisible(), false);
       }
     } finally { await noScript.close(); }
 
@@ -172,7 +193,7 @@ async function verify() {
       assert.ok(await touchPage.evaluate(() => scrollY) > beforeScroll, 'Vertical touch gestures keep native page scrolling');
     } finally { await touchContext.close(); }
 
-    console.log('PASS: square deck, wraparound buttons/dots/keyboard, mouse drag and real touch swipe, native vertical scrolling, short/cancelled gestures, real links, deep links, reduced motion, no-JS fallback, restored skills cards and sharp controls at five widths.');
+    console.log('PASS: clean deck controls, dots/keyboard, mouse and touch swipe, native vertical scrolling, gesture cancellation, links, reduced motion, no-JS fallback, compact mobile skills and aligned hero buttons at seven widths.');
   } finally { await browser.close(); }
 }
 
