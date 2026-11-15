@@ -35,7 +35,7 @@ async function verifyPage(page, origin = 'http://127.0.0.1:4175/') {
   await archiveSummary.focus();
   await page.keyboard.press('Enter');
   assert.equal(await archivedProject.isVisible(), true);
-  assert.equal(await archive.locator('.archive-grid > article, .archive-grid > div').count(), 8);
+  assert.equal(await archive.locator('.archive-grid > article, .archive-grid > div').count(), 9);
   await page.keyboard.press('Enter');
   assert.equal(await archivedProject.isVisible(), false);
 

@@ -23,7 +23,7 @@ tests/verify-mobile.cjs - phone layout with every external request blocked
 
 The homepage features BlinkBreak, CosmIQ Sync, and CosmIQ KEAM Predictor in a swipeable square-card stack. Drag/swipe left or right, click/tap the front card, use the small dots below, or focus the gallery and use Arrow keys/Home/End. The selected card comes forward while the others move behind it; its full description and links remain below the square. Dragging never triggers an extra click. There is no autoplay. Without JavaScript, all three projects remain readable in a list.
 
-Eight additional projects are available in the native “Explore more projects” disclosure; the detailed journey is also expandable.
+Nine additional projects are available in the native “Explore more projects” disclosure; the detailed journey is also expandable.
 
 There is no separate “Proof of Work” repository strip; source links remain with their projects and in the contact/footer profiles.
 
